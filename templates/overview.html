@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>I'm extending</h2>
     {% for session in sessions %}
         {{ session.exercise_date}} <br>
         {{ session.exercise_name }} <br>
