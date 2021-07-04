@@ -72,11 +72,11 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 [Most used fonts for gyms](https://www.ilovewp.com/resources/wordpress-for-gyms/most-used-google-fonts-on-gym-websites/)
 
 ### Colours
-1. 020887 – Phthalo Blue
-1. FC9E47 – Sandy Brown
-1. 4381C1 – Steal Blue
-1. DB5461 – Indian Red
-1. D3FFF3 – Aero Blue
+1. 0D47A1 - Blue darken-4
+1. FFA726 – Orange lighten-1
+1. 42A5F5 – Blue lighten-1
+1. E57373 – Red lighten-2
+1. E0F2F1 - Teal lighten-5
 
 ### Images
 
