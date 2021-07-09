@@ -26,7 +26,26 @@ def get_overview():
 
 
 @app.route("/signup", methods=["GET", "POST"])
-def account():
+def create_account():
+    if request.method == "POST":
+        # check if username already exists in database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username already taken")
+            return redirect(url_for("create_account"))
+
+        create_account = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(
+                request.form.get("password"), salt_length=128)
+            }
+        mongo.db.users.insert_one(create_account)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Account Created Successfully!")
     return render_template("account.html")
 
 
