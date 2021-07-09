@@ -25,7 +25,12 @@ def get_overview():
     return render_template("overview.html", sessions=sessions)
 
 
-@app.route("/signup", methods=["GET", "POST"])
+@app.route("/account", methods=["GET", "POST"])
+def account():
+    return render_template("account.html")
+
+
+@app.route("/create_account", methods=["GET", "POST"])
 def create_account():
     if request.method == "POST":
         # check if username already exists in database
@@ -40,7 +45,7 @@ def create_account():
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(
                 request.form.get("password"), salt_length=128)
-            }
+        }
         mongo.db.users.insert_one(create_account)
 
         # put the new user into 'session' cookie
