@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align">
+        Account <i class="fas fa-user blue-text text-darken-4"></i>
+    </h3>
+
+    <div class="row">
+        <div class="card col s12 m8 offset-m2">
+            <div class="row">
+                <div class="card-tabs">
+                    <ul class="tabs tabs-fixed-width">
+                        <li class="tab"><a href="#test4" class="active blue-text text-darken-4">Login</a></li>
+                        <li class="tab"><a class="blue-text text-darken-4" href="#test5">Create Account</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card-content">
+                    <!-- Sign In-->
+                    <div id="test4">
+                        <form method="POST" action="{{ url_for('account') }}">
+                            <!-- username -->
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="fas fa-user-plus prefix blue-text text-darken-4"></i>
+                                    <input id="username1" name="username1" type="text" class="validate">
+                                    <label for="username1">Username</label>
+                                </div>
+                            </div>
+                            <!-- password -->
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="fas fa-user-lock prefix blue-text text-darken-4"></i>
+                                    <input id="password1" name="password1" type="password" class="validate">
+                                    <label for="password1">Password</label>
+                                </div>
+                            </div>
+                            <!-- Sign In & Cancel Button -->
+                            <div class="row">
+                                <button type="submit" class="col s6 btn-large red text-shadow" href="#">
+                                        Cancel <i class="fas fa-ban"></i>
+                                </button>
+                                <button type="submit" class="col s6 btn-large blue darken-4 text-shadow" href="{{ url_for('get_overview') }}">
+                                        Login <i class="fas fa-sign-in-alt"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!--Signup-->
+                    <div id="test5">
+                        <form method="POST" action="{{ url_for('account') }}">
+                            <!-- username -->
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="fas fa-user-plus prefix blue-text text-darken-4"></i>
+                                    <input id="username" name="username" type="text" class="validate">
+                                    <label for="username">Username</label>
+                                </div>
+                                <!-- password -->
+                                <!-- Code taken from http://jsfiddle.net/SirusDoma/ayf832td/-->
+                                <div class="input-field col s12">
+                                    <i class="fas fa-user-lock prefix blue-text text-darken-4"></i>
+                                    <input id="password" type="password" class="validate">
+                                    <label for="password">Password
+                                        <i>(Must be more than 5 characters)</i>
+                                    </label>
+                                </div>
+                                <!--Confirm password-->
+                                <!-- Code taken from http://jsfiddle.net/SirusDoma/ayf832td/-->
+                                <div class="input-field col s12">
+                                    <i class="fas fa-user-check prefix blue-text text-darken-4"></i>
+                                    <input id="passwordConfirm" type="password">
+                                    <label id="lblPasswordConfirm" for="passwordConfirm" data-error="Password not match"
+                                        data-success="Password Match">
+                                        Password <i>(Confirm)</i>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- signup & cancel button -->
+                            <div class="row">
+                                <button type="submit" class="col s6 btn-large red text-shadow" href="#">
+                                    Cancel <i class="fas fa-ban"></i>
+                                </button>
+                                <button type="submit" class="col s6 btn-large blue darken-4 text-shadow">
+                                    Create Account <i class="fas fa-sign-in-alt"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
