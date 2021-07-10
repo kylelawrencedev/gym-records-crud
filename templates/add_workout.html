@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="blue-text text-darken-4 center-align">Add Workout</h3>
+    
+    <div class="row">
+        <form class="col s12" method="POST" action="">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-heading prefix blue-text text-darken-4"></i>
+                    <input id="icon_prefix" type="text" class="validate">
+                    <label for="icon_prefix">Workout Heading</label>
+                </div>
+                <div class="input-field col s4">
+                    <i class="fas fa-dumbbell prefix blue-text text-darken-4"></i>
+                    <input id="icon_telephone" type="tel" class="validate">
+                    <label for="icon_telephone">Exercise Name</label>
+                </div>
+                <div class="input-field col s2">
+                    <input id="reps" name="reps" type="number" class="validate">
+                    <label for="reps">Reps</label>
+                </div>
+                <div class="input-field col s2">
+                    <input id="sets" name="sets" type="number" class="validate">
+                    <label for="sets">Sets</label>
+                </div>
+                <div class="input-field col s2">
+                    <input id="weight" name="weight" type="number" class="validate">
+                    <label for="weight">Reps</label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
