@@ -26,7 +26,7 @@ def home():
 
 @app.route("/get_overview")
 def get_overview():
-    sessions = mongo.db.sessions.find()
+    sessions = list(mongo.db.sessions.find())
     return render_template("overview.html", sessions=sessions)
 
 

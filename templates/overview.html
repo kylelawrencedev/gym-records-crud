@@ -1,27 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for session in sessions %}
-        {{ session.exercise_date}} <br>
-        {{ session.exercise_name }} <br>
-        {{ session.exercise_reps}} <br>
-        {{ session.exercise_sets}} <br>
-        {{ session.exercise_weight}} <br>        
-    {% endfor %}
-
     <ul class="collapsible">
+        {% for session in sessions %}
         <li>
-          <div class="collapsible-header white-text blue lighten-1"><i class="fas fa-caret-down text-shadow"></i>First</div>
-          <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-          <div class="collapsible-header white-text blue lighten-1"><i class="fas fa-caret-down text-shadow"></i>Second</div>
-          <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-          <div class="collapsible-header white-text blue lighten-1"><i class="fas fa-caret-down text-shadow"></i>Third</div>
-          <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-      </ul>
+            <div class="collapsible-header white-text blue lighten-1">
+                <i class="fas fa-caret-down text-shadow"></i>
+                <strong>{{ session.exercise_heading}}</strong> : {{ session.exercise_date}}
+            </div>
+            <div class="collapsible-body">
 
+                <div class="row">
+                    <strong class="col s3">{{ session.exercise_name }}:</strong>
+                    <div class="col s3">{{ session.exercise_reps}} reps</div>
+                    <div class="col s3">{{ session.exercise_sets}} sets</div>
+                    <div class="col s3">{{ session.exercise_weight}} kg's</div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
