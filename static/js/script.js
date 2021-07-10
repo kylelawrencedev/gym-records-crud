@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $('.sidenav').sidenav({edge: "right"});
+    $('.collapsible').collapsible();
     $('.tabs').tabs();
     /* Code for confirming password was used from 
     http://jsfiddle.net/SirusDoma/ayf832td/
