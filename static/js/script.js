@@ -3,6 +3,15 @@ $(document).ready(function () {
     $('.collapsible').collapsible();
     $('.tabs').tabs();
     $('select').formSelect();
+    $('.datepicker').datepicker({
+        format: "ddd mmmm, yyyy",
+        yearRange: 1,
+        showClearBtn: true,
+        i18n: {
+            done: "Select"
+        },
+        showDaysInNextAndPreviousMonths: true
+    });
     /* Code for confirming password was used from 
     http://jsfiddle.net/SirusDoma/ayf832td/
     */
