@@ -4,7 +4,7 @@ $(document).ready(function () {
     $('.tabs').tabs();
     $('select').formSelect();
     $('.datepicker').datepicker({
-        format: "ddd mmmm, yyyy",
+        format: "dd mmmm, yyyy",
         yearRange: 1,
         showClearBtn: true,
         i18n: {
