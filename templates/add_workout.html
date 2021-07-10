@@ -37,7 +37,7 @@
                     <label for="exercise_weight">Weight</label>
                 </div>
             </div>
-
+            <!--Workout date-->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-day prefix blue-text text-darken-4"></i>
@@ -45,8 +45,20 @@
                     <label for="exercise_date">Workout Date</label>
                 </div>
             </div>
+            <!--Workout Week -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-week prefix blue-text text-darken-4"></i>
+                    <select id="week_no" name="week_no" class="validate" required>
+                        <option value="" disabled selected>Choose Week</option>
+                        <option value="1">Option 1</option>
+                    </select>
+                    <label>Week # </label>
+                </div>
+            </div>
+        </form>
     </div>
-    </form>
+    
     </div>
 
 {% endblock %}
