@@ -42,3 +42,25 @@ $(document).ready(function () {
         return true;
     });
 });
+function deleteRow() {
+    const TABLE = document.getElementById('exerciseRow');
+    let rowCount = TABLE.rows.length;
+    if(rowCount >'1'){
+        let row = TABLE.deleteRow(rowCount-1);
+        rowCount--;
+    } else{
+        alert("There has to be more than one Exercise")
+    }
+}
+function addRow() {
+	var table = document.getElementById('exerciseRow');
+	var rowCount = table.rows.length;
+	var cellCount = table.rows[0].cells.length; 
+	var row = table.insertRow(rowCount);
+    for(var i =0; i <= cellCount; i++){
+        var cell = 'cell'+i;
+		cell = row.insertCell(i);
+		var copycel = document.getElementById('col'+i).innerHTML;
+		cell.innerHTML=copycel;
+    }
+}

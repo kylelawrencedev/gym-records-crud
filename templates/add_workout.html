@@ -15,28 +15,6 @@
                     <small><i>minlength:5 maxlength:30</i></small>
                 </div>
             </div>
-            <!--Workout name, sets, reps and weight-->
-            <div class="row">
-                <div class="input-field col s4">
-                    <i class="fas fa-dumbbell prefix blue-text text-darken-4"></i>
-                    <input id="exercise_name" name="exercise_name" type="text" class="validate" minlength="5"
-                        maxlength="30" required>
-                    <label for="exercise_name">Exercise Name</label>
-                    <small><i>minlength:5 maxlength:30</i></small>
-                </div>
-                <div class="input-field col s2">
-                    <input id="exercise_reps" name="exercise_reps" type="number" class="validate" required>
-                    <label for="exercise_reps">Reps</label>
-                </div>
-                <div class="input-field col s2">
-                    <input id="exercise_sets" name="exercise_sets" type="number" class="validate" required>
-                    <label for="exercise_sets">Sets</label>
-                </div>
-                <div class="input-field col s2">
-                    <input id="exercise_weight" name="exercise_weight" type="number" class="validate" required>
-                    <label for="exercise_weight">Weight</label>
-                </div>
-            </div>
             <!--Workout date-->
             <div class="row">
                 <div class="input-field col s12">
@@ -56,15 +34,41 @@
                     <label>Week # </label>
                 </div>
             </div>
+            <!--Workout name, sets, reps and weight-->
+            <table id="exerciseRow">
+                <tbody>
+                  <tr>
+                    <td id="col0">
+                        <input id="exercise_name" name="exercise_name" type="text" class="validate" minlength="5"
+                        maxlength="30"placeholder="Exercise Name" required >
+                    </td>
+                    <td id="col1">
+                        <input id="exercise_reps" name="exercise_reps" type="number" class="validate" min="1"  placeholder="Reps" required>
+                    </td>
+                    <td id="col2">
+                        <input id="exercise_sets" name="exercise_sets" type="number" class="validate" min="1" placeholder="Sets" required>
+                    </td>
+                    <td id="col3">
+                        <input id="exercise_weight" name="exercise_weight" type="number" class="validate" min="1" placeholder="Weight" required>
+                    </td>
+                    <td id="col4">
+                        <input type="button" value="Delete Exercise" onclick="deleteRow()">
+                    </td">
+                    <td id="col5">
+                        <input type="button" value="Add Exercise" onclick="addRow()">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
             <!--Submit Button-->
             <div class="row">
-                <div class="col s12 center-align">
-                    <button type="submit" class="btn-large blue darken-4 text-shadow">
-                        Add Workout <i class="fas fa-plus-square right"></i>
-                    </button>
-                </div>
+                <button type="submit" class="col s12 btn-large blue darken-4 text-shadow"
+                    href="{{ url_for('get_overview') }}">
+                    Add Workout <i class="fas fa-plus-square"></i>
+                </button>
             </div>
-        </form>
+            </form>
     </div>
 
 {% endblock %}
