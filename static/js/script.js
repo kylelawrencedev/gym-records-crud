@@ -107,3 +107,6 @@ function addRow() {
 		cell.innerHTML=copycel;
     }
 }
+function resetForm() {
+    document.getElementById('workoutForm').reset();
+}

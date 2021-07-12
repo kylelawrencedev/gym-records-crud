@@ -5,7 +5,7 @@
 
     <div class="row card-panel grey lighten-5">
         <!--Create new workout-->
-        <form class="col s12" method="POST" action="{{ url_for('add_workout') }}">
+        <form class="col s12" id="workoutForm" method="POST" action="{{ url_for('add_workout') }}">
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix blue-text text-darken-4"></i>
@@ -63,7 +63,7 @@
               <br>
             <!--Submit Button-->
             <div class="row">
-                <a class="col s5 btn-large red text-shadow" href="{{ url_for('add_workout') }}">
+                <a class="col s5 btn-large red text-shadow" onclick="resetForm()">
                     Reset
                 </a>
                 <div class="col s2"></div>
