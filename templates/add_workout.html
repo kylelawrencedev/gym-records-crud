@@ -63,9 +63,13 @@
               <br>
             <!--Submit Button-->
             <div class="row">
-                <button type="submit" class="col s12 btn-large blue darken-4 text-shadow"
+                <a class="col s5 btn-large red text-shadow" href="{{ url_for('add_workout') }}">
+                    Reset
+                </a>
+                <div class="col s2"></div>
+                <button type="submit" class="col s5 btn-large blue darken-4 text-shadow"
                     href="{{ url_for('get_overview') }}">
-                    Add Workout <i class="fas fa-plus-square"></i>
+                    Add Workout
                 </button>
             </div>
             </form>
