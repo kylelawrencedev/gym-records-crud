@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="blue-text text-darken-4 center-align">Edit Workout</h3>
+
+    <div class="row card-panel grey lighten-5">
+        <!--Create new workout-->
+        <form class="col s12" id="workoutForm" method="POST" action="{{ url_for('edit_workout', exercise_id=session._id) }}">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-pencil-alt prefix blue-text text-darken-4"></i>
+                    <input id="exercise_heading" name="exercise_heading" type="text" class="validate" required
+                        minlength="5" maxlength="30">
+                    <label for="exercise_heading">Workout Heading</label>
+                    <small><i>minlength:5 maxlength:30</i></small>
+                </div>
+            </div>
+            <!--Workout date-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-day prefix blue-text text-darken-4"></i>
+                    <input id="exercise_date" name="exercise_date" type="text" class="datepicker validate" required>
+                    <label for="exercise_date">Workout Date</label>
+                </div>
+            </div>
+            <!--Workout Week -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-week prefix blue-text text-darken-4"></i>
+                    <select id="week_no" name="week_no" class="validate" required>
+                        <option value="" disabled selected>Choose Week</option>
+                        <option value="1">Option 1</option>
+                    </select>
+                    <label>Week # </label>
+                </div>
+            </div>
+            <!--Workout name, sets, reps and weight-->
+            <table id="exerciseRow">
+                <tbody>
+                  <tr>
+                    <td id="col0">
+                        <input id="exercise_name" name="exercise_name" type="text" class="validate" minlength="5"
+                        maxlength="30"placeholder="Exercise Name" required >
+                    </td>
+                    <td id="col1">
+                        <input id="exercise_reps" name="exercise_reps" type="number" class="validate" min="1"  placeholder="Reps" required>
+                    </td>
+                    <td id="col2">
+                        <input id="exercise_sets" name="exercise_sets" type="number" class="validate" min="1" placeholder="Sets" required>
+                    </td>
+                    <td id="col3">
+                        <input id="exercise_weight" name="exercise_weight" type="number" class="validate" min="1" placeholder="Weight" required>
+                    </td>
+                    <td id="col4">
+                        <input type="button" value="Delete Exercise" onclick="deleteRow()">
+                    </td">
+                    <td id="col5">
+                        <input type="button" value="Add Exercise" onclick="addRow()">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+            <!--Submit Button-->
+            <div class="row">
+                <a class="col s5 btn-large red text-shadow" onclick="resetForm()">
+                    Reset
+                </a>
+                <div class="col s2"></div>
+                <button type="submit" class="col s5 btn-large blue darken-4 text-shadow"
+                    href="{{ url_for('get_overview') }}">
+                    Edit Workout
+                </button>
+            </div>
+            </form>
+    </div>
+
+{% endblock %}

@@ -127,6 +127,12 @@ def add_workout():
     return render_template("add_workout.html")
 
 
+@app.route("/edit_workout/<exercise_id>", methods=["GET", "POST"])
+def edit_workout(exercise_id):
+    session = mongo.db.sessions.find_one({"_id": ObjectId(exercise_id)})
+    return render_template("edit_workout.html", session=session)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
