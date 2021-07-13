@@ -121,7 +121,7 @@ def add_workout():
             "exercise_date": request.form.get("exercise_date"),
             "created_by": session["user"],
         }
-        mongo.db.sessions.insert_one(workout)
+        mongo.db.workouts.insert_one(workout)
         flash("Workout Session Successfully Added")
         return redirect(url_for("get_overview"))
         
