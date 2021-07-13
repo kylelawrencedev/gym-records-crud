@@ -98,14 +98,33 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    records = list(mongo.db.records.find())
     # grab the session user's username from database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", 
+            username=username, records=records)
 
     return redirect(url_for("login"))
+
+
+@app.route("/add_record", methods=["GET", "POST"])
+def add_record():
+    if request.method == "POST":
+        record = {
+            "user_fullName": request.form.get("user_fullName"),
+            "user_height": request.form.get("user_height"),
+            "user_weight": request.form.get("user_weight"),
+            "date_added": request.form.get("date_added"),
+            "created_by": session["user"],
+        }
+        mongo.db.records.insert_one(record)
+        flash("Profile Records Successfully Added")
+        return redirect(url_for("profile.html"))
+
+    return render_template("add_record.html")
 
 
 @app.route("/logout")
