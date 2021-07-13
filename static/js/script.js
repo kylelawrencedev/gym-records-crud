@@ -5,6 +5,7 @@ $(document).ready(function () {
     $('.collapsible').collapsible();
     $('.tabs').tabs();
     $('select').formSelect();
+    $('.dropdown-trigger').dropdown()
     $('.datepicker').datepicker({
         format: "dd mmmm, yyyy",
         yearRange: 1,
