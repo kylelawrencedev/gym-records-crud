@@ -30,6 +30,13 @@ def get_overview():
     return render_template("overview.html", workouts=workouts)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    workouts = list(mongo.db.workouts.find({"$text": {"$search": query}}))
+    return render_template("overview.html", workouts=workouts)
+
+
 @app.route("/account", methods=["GET", "POST"])
 def account():
     return render_template("account.html")
