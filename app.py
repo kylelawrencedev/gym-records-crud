@@ -138,6 +138,7 @@ def edit_workout(exercise_id):
             "exercise_sets": request.form.get("exercise_sets"),
             "exercise_weight": request.form.get("exercise_weight"),
             "exercise_date": request.form.get("exercise_date"),
+            "created_by": session["user"],
         }
         mongo.db.workouts.update({"_id": ObjectId(exercise_id)}, submit)
         flash("Workout Session Successfully Updated")
