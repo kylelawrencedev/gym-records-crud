@@ -2,22 +2,27 @@
 {% block content %}
 
     <h3 class="blue-text text-darken-4 center-align">Overview</h3>
-
+    <div class="row">
+        <div class="col s12 center-align">
+            <a class="btn-large orange lighten-1 black-text" href="{{ url_for('add_workout') }}">
+                Add Workout
+            </a>
+        </div>
+    </div>
+    {% for workout in workouts %}
+    {% if session.user|lower == workout.created_by|lower %}
     <ul class="collapsible">
-        {% for workout in workouts %}
         <li>
-            {% if session.user|lower == workout.created_by|lower %}
             <div class="collapsible-header white-text blue darken-1">
                 <div class="col s2">
                     <i class="fas fa-caret-down text-shadow"></i>
-                    <a href="{{ url_for('edit_workout', exercise_id=workout._id )}}" class="btn-small orange lighten-1 right-align">Edit</a>
+                    <a href="{{ url_for('edit_workout', exercise_id=workout._id )}}" class="btn-small orange lighten-1 right-align black-text">Edit</a>
                 </div>
                 <div class="col s6">
                     <strong>{{ workout.exercise_heading}}</strong> : {{ workout.exercise_date}}
                 </div>
             </div>
             <div class="collapsible-body">
-
                 <div class="row">
                     <strong class="col s3">{{ workout.exercise_name }}:</strong>
                     <div class="col s3">{{ workout.exercise_reps}} reps</div>
@@ -25,8 +30,8 @@
                     <div class="col s3">{{ workout.exercise_weight}} kg's</div>
                 </div>
             </div>
-            {% endif %}
         </li>
-        {% endfor %}
     </ul>
+    {% endif %}
+    {% endfor %}
 {% endblock %}
