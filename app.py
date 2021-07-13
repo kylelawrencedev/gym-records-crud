@@ -26,8 +26,8 @@ def home():
 
 @app.route("/get_overview")
 def get_overview():
-    sessions = list(mongo.db.sessions.find())
-    return render_template("overview.html", sessions=sessions)
+    workouts = list(mongo.db.workouts.find())
+    return render_template("overview.html", workouts=workouts)
 
 
 @app.route("/account", methods=["GET", "POST"])
@@ -112,15 +112,16 @@ def logout():
 @app.route("/add_workout", methods=["GET", "POST"])
 def add_workout():
     if request.method == "POST":
-        session = {
+        workout = {
             "exercise_heading": request.form.get("exercise_heading"),
             "exercise_name": request.form.get("exercise_name"),
             "exercise_reps": request.form.get("exercise_reps"),
             "exercise_sets": request.form.get("exercise_sets"),
             "exercise_weight": request.form.get("exercise_weight"),
             "exercise_date": request.form.get("exercise_date"),
+            "created_by": session["user"],
         }
-        mongo.db.sessions.insert_one(session)
+        mongo.db.sessions.insert_one(workout)
         flash("Workout Session Successfully Added")
         return redirect(url_for("get_overview"))
         
@@ -138,11 +139,11 @@ def edit_workout(exercise_id):
             "exercise_weight": request.form.get("exercise_weight"),
             "exercise_date": request.form.get("exercise_date"),
         }
-        mongo.db.sessions.update({"_id": ObjectId(exercise_id)}, submit)
+        mongo.db.workouts.update({"_id": ObjectId(exercise_id)}, submit)
         flash("Workout Session Successfully Updated")
 
-    session = mongo.db.sessions.find_one({"_id": ObjectId(exercise_id)})
-    return render_template("edit_workout.html", session=session)
+    workout = mongo.db.workouts.find_one({"_id": ObjectId(exercise_id)})
+    return render_template("edit_workout.html", workout=workout)
 
 
 if __name__ == "__main__":

@@ -6,12 +6,12 @@
     <div class="row card-panel grey lighten-5">
         <!--Create new workout-->
         <form class="col s12" id="workoutForm" method="POST"
-            action="{{ url_for('edit_workout', exercise_id=session._id) }}">
+            action="{{ url_for('edit_workout', exercise_id=workout._id) }}">
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix blue-text text-darken-4"></i>
                     <input id="exercise_heading" name="exercise_heading" type="text" class="validate" required
-                        minlength="5" maxlength="30" value="{{session.exercise_heading}}">
+                        minlength="5" maxlength="30" value="{{workout.exercise_heading}}">
                     <label for="exercise_heading">Workout Heading</label>
                     <small><i>minlength:5 maxlength:30</i></small>
                 </div>
@@ -21,7 +21,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-day prefix blue-text text-darken-4"></i>
                     <input id="exercise_date" name="exercise_date" type="text" class="datepicker validate"
-                        value="{{session.exercise_date}}" required>
+                        value="{{workout.exercise_date}}" required>
                     <label for="exercise_date">Workout Date</label>
                 </div>
             </div>
@@ -42,19 +42,19 @@
                     <tr>
                         <td id="col0">
                             <input id="exercise_name" name="exercise_name" type="text" class="validate" minlength="5"
-                                maxlength="30" placeholder="Exercise Name" value="{{session.exercise_name}}" required>
+                                maxlength="30" placeholder="Exercise Name" value="{{workout.exercise_name}}" required>
                         </td>
                         <td id="col1">
                             <input id="exercise_reps" name="exercise_reps" type="number" class="validate" min="1"
-                                placeholder="Reps" value="{{session.exercise_reps}}" required>
+                                placeholder="Reps" value="{{workout.exercise_reps}}" required>
                         </td>
                         <td id="col2">
                             <input id="exercise_sets" name="exercise_sets" type="number" class="validate" min="1"
-                                placeholder="Sets" value="{{session.exercise_sets}}" required>
+                                placeholder="Sets" value="{{workout.exercise_sets}}" required>
                         </td>
                         <td id="col3">
                             <input id="exercise_weight" name="exercise_weight" type="number" class="validate" min="1"
-                                placeholder="Weight" value="{{session.exercise_weight}}" required>
+                                placeholder="Weight" value="{{workout.exercise_weight}}" required>
                         </td>
                         <td id="col4">
                             <input type="button" value="Delete Exercise" onclick="deleteRow()">
