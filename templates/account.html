@@ -38,12 +38,16 @@
                             </div>
                             <!-- Sign In & Cancel Button -->
                             <div class="row">
-                                <button type="submit" class="col s6 btn-large red text-shadow" href="#">
+                                <div class="col s12 center-align">
+                                    <a type="button" class=" btn-large red text-shadow" href="{{ url_for('home') }}">
                                         Cancel <i class="fas fa-ban"></i>
-                                </button>
-                                <button type="submit" class="col s6 btn-large blue darken-4 text-shadow" href="{{ url_for('get_overview') }}">
+                                    </a>
+                                    <button type="submit" id="accountBtn"
+                                        class="btn-large blue darken-4 text-shadow"
+                                        href="{{ url_for('get_overview') }}">
                                         Login <i class="fas fa-sign-in-alt"></i>
-                                </button>
+                                    </button>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -79,12 +83,16 @@
                             </div>
                             <!-- signup & cancel button -->
                             <div class="row">
-                                <button type="submit" class="col s6 btn-large red text-shadow" href="#">
-                                    Cancel <i class="fas fa-ban"></i>
-                                </button>
-                                <button type="submit" id="accountBtn" class="col s6 btn-large blue darken-4 text-shadow" href="{{ url_for('get_overview') }}">
-                                    Create Account <i class="fas fa-sign-in-alt"></i>
-                                </button>
+                                <div class="col s12 center-align">
+                                    <a type="button" class=" btn-large red text-shadow" href="{{ url_for('home') }}">
+                                        Cancel <i class="fas fa-ban"></i>
+                                    </a>
+                                    <button type="submit" id="accountBtn"
+                                        class="btn-large blue darken-4 text-shadow"
+                                        href="{{ url_for('get_overview') }}">
+                                        Create Account <i class="fas fa-sign-in-alt"></i>
+                                    </button>
+                                </div>
                             </div>
                         </form>
                     </div>
