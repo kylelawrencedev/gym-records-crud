@@ -138,7 +138,7 @@ def edit_record(record_id):
             "created_by": session["user"],
         }
         mongo.db.records.update({"_id": ObjectId(record_id)}, update)
-        flash("Workout Session Successfully Updated")
+        flash("Record Successfully Updated")
         return redirect(url_for("profile", username=session["user"]))
 
     record = mongo.db.records.find_one({"_id": ObjectId(record_id)})
