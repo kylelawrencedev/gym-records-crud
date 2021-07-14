@@ -15,27 +15,31 @@
             </div>
         </div>
     </div>
-    <div class="row card">
-        {% for record in records %}
-        <table>
-            <thead>
-              <tr>
-                  <th></th>
-                  <th>Height</th>
-                  <th>Weight</th>
-                  <th>Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{{ record.user_fullName }}</td>
-                <td>{{ record.user_height }} cm's</td>
-                <td> {{ record.user_weight }} kg's</td>
-                <td>{{ record.date_added }}</td>
-              </tr>
-            </tbody>
-          </table>
-        {% endfor %}
+    <div class="row">
+        <div class="col s12">
+            <ul class="collapsible">
+                {% for record in records %}
+                <li>
+                    {% if session.user|lower == record.created_by|lower %}
+                    <div class="collapsible-header white-text blue darken-1">
+                        <div>
+                            <i class="fas fa-caret-down text-shadow"></i>
+                        </div>
+                        <div>{{ record.date_added }}</div>
+                    </div>
+                    <div class="collapsible-body">
+                        <div class="row">
+                            <strong class="col s3">{{ record.user_fullName }}</strong>
+                            <div class="col s3">{{ record.user_height }} cm's</div>
+                            <div class="col s3">{{ record.user_weight }} kg's</div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
+
 
 {% endblock %}
