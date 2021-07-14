@@ -122,7 +122,7 @@ def add_record():
         }
         mongo.db.records.insert_one(record)
         flash("Profile Records Successfully Added")
-        return redirect(url_for("profile.html"))
+        return redirect(url_for("profile", username=session["user"]))
 
     return render_template("add_record.html")
 
@@ -139,6 +139,7 @@ def edit_record(record_id):
         }
         mongo.db.records.update({"_id": ObjectId(record_id)}, update)
         flash("Workout Session Successfully Updated")
+        return redirect(url_for("profile", username=session["user"]))
 
     record = mongo.db.records.find_one({"_id": ObjectId(record_id)})
     return render_template("edit_record.html", record=record)
@@ -185,7 +186,7 @@ def edit_workout(exercise_id):
         }
         mongo.db.workouts.update({"_id": ObjectId(exercise_id)}, submit)
         flash("Workout Session Successfully Updated")
-
+        return redirect(url_for("get_overview"))
     workout = mongo.db.workouts.find_one({"_id": ObjectId(exercise_id)})
     return render_template("edit_workout.html", workout=workout)
 
