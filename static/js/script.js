@@ -111,10 +111,3 @@ function addRow() {
 function resetForm() {
     document.getElementById('workoutForm').reset();
 }
-document.getElementById("userDelete").addEventListener("click", function () {
-    let workoutDelete;
-    let userConfirm = confirm("Press OK to Delete Workout");
-    if (userConfirm == true){
-        workoutDelete = document.getElementById("delete").click();
-    }
-})

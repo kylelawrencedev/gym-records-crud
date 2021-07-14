@@ -94,3 +94,4 @@ On mobile the one image will be a mock-up image followed by a short paragraph li
 
 
 # Credits
+https://www.codegrepper.com/code-examples/css/javascript+confirm+delete for confirm delete of Workout
