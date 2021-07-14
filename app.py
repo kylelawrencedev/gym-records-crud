@@ -127,6 +127,23 @@ def add_record():
     return render_template("add_record.html")
 
 
+@app.route("/edit_record/<record_id>", methods=["GET", "POST"])
+def edit_record(record_id):
+    if request.method == "POST":
+        update = {
+            "user_fullName": request.form.get("user_fullName"),
+            "user_height": request.form.get("user_height"),
+            "user_weight": request.form.get("user_weight"),
+            "date_added": request.form.get("date_added"),
+            "created_by": session["user"],
+        }
+        mongo.db.records.update({"_id": ObjectId(record_id)}, update)
+        flash("Workout Session Successfully Updated")
+
+    record = mongo.db.records.find_one({"_id": ObjectId(record_id)})
+    return render_template("edit_record.html", record=record)
+
+
 @app.route("/logout")
 def logout():
     # remove user from session cookies

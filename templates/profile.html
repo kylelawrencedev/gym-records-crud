@@ -26,6 +26,11 @@
                             <i class="fas fa-caret-down text-shadow"></i>
                         </div>
                         <div>{{ record.date_added }}</div>
+                        <div class="col s12 right-align">
+
+                            <a href="{{ url_for('edit_record', record_id=record._id )}}"
+                                class="btn-small orange lighten-1 black-text">Edit</a>
+                        </div>
                     </div>
                     <div class="collapsible-body">
                         <div class="row">
@@ -40,6 +45,5 @@
             </ul>
         </div>
     </div>
-
 
 {% endblock %}
