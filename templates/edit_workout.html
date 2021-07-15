@@ -10,8 +10,10 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix blue-text text-darken-4"></i>
+                    {% for ex_heading in workout.exercise_heading %}
                     <input id="exercise_heading" name="exercise_heading" type="text" class="validate" required
-                        minlength="5" maxlength="30" value="{{workout.exercise_heading}}">
+                        minlength="5" maxlength="30" value="{{ ex_heading }}">
+                    {% endfor %}
                     <label for="exercise_heading">Workout Heading</label>
                     <small><i>minlength:5 maxlength:30</i></small>
                 </div>
@@ -20,39 +22,47 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-day prefix blue-text text-darken-4"></i>
+                    {% for ex_date in workout.exercise_date %}
                     <input id="exercise_date" name="exercise_date" type="text" class="datepicker validate"
-                        value="{{workout.exercise_date}}" required>
+                    value="{{ ex_date }}" required>
+                    {% endfor %}
                     <label for="exercise_date">Workout Date</label>
                 </div>
             </div>
             <!--Workout name, sets, reps and weight-->
             <table id="exerciseRow">
-                <tbody>
-                    <tr>
-                        <td id="col0">
-                            <input id="exercise_name" name="exercise_name" type="text" class="validate" minlength="5"
-                                maxlength="30" placeholder="Exercise Name" value="{{workout.exercise_name}}" required>
-                        </td>
-                        <td id="col1">
-                            <input id="exercise_reps" name="exercise_reps" type="number" class="validate" min="1"
-                                placeholder="Reps" value="{{workout.exercise_reps}}" required>
-                        </td>
-                        <td id="col2">
-                            <input id="exercise_sets" name="exercise_sets" type="number" class="validate" min="1"
-                                placeholder="Sets" value="{{workout.exercise_sets}}" required>
-                        </td>
-                        <td id="col3">
-                            <input id="exercise_weight" name="exercise_weight" type="number" class="validate" min="1"
-                                placeholder="Weight" value="{{workout.exercise_weight}}" required>
-                        </td>
-                        <td id="col4">
-                            <input type="button" value="Delete Exercise" onclick="deleteRow()">
-                            </td">
-                        <td id="col5">
-                            <input type="button" value="Add Exercise" onclick="addRow()">
-                        </td>
-                    </tr>
-                </tbody>
+                <tr>
+                    <td id="col0">
+                        {% for ex_name in workout.exercise_name %}
+                        <input id="exercise_name" name="exercise_name" type="text" class="validate" minlength="5"
+                            maxlength="30" placeholder="Exercise Name" value="{{ ex_name }}" required>
+                        {% endfor %}
+                    </td>
+                    <td id="col1">
+                        {% for ex_reps in workout.exercise_reps %}
+                        <input id="exercise_reps" name="exercise_reps" type="number" class="validate" min="1"
+                            placeholder="Reps" value="{{ ex_reps }}" required>
+                        {% endfor %}
+                    </td>
+                    <td id="col2">
+                        {% for ex_sets in workout.exercise_sets %}
+                        <input id="exercise_sets" name="exercise_sets" type="number" class="validate" min="1"
+                            placeholder="Sets" value="{{ ex_sets }}" required>
+                        {% endfor %}
+                    </td>
+                    <td id="col3">
+                        {% for ex_weight in workout.exercise_weight %}
+                        <input id="exercise_weight" name="exercise_weight" type="number" class="validate" min="1"
+                            placeholder="Weight" value="{{ ex_weight }}" required>
+                        {% endfor %}
+                    </td>
+                    <td id="col4">
+                        <input type="button" value="Delete Exercise" onclick="deleteRow()">
+                    </td>
+                    <td id="col5">
+                        <input type="button" value="Add Exercise" onclick="addRow()">
+                    </td>
+                </tr>
             </table>
             <br>
             <!--Submit Button-->
