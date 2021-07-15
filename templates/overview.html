@@ -2,6 +2,7 @@
 {% block content %}
 
     <h3 class="blue-text text-darken-4 center-align">Overview</h3>
+    
     <div class="row">
         <div class="col s12 center-align">
             <a class="btn-large orange lighten-1 black-text" href="{{ url_for('add_workout') }}">
@@ -39,7 +40,12 @@
                             <i class="fas fa-caret-down text-shadow"></i>
                         </div>
                         <div>
-                            <strong>{{ workout.exercise_heading}}</strong> : {{ workout.exercise_date}}
+                            {% for ex_heading in workout.exercise_heading %}
+                            <strong>{{ ex_heading}}</strong>
+                            {% endfor %} : 
+                            {% for ex_date in workout.exercise_date %}
+                            {{ ex_date }}
+                            {% endfor %}
                         </div>
                         <div class="col s12 right-align">
                             <a href="{{ url_for('delete_workout', exercise_id=workout._id )}}" type="button"
@@ -52,12 +58,36 @@
                     </div>
                     <div class="collapsible-body">
                         <div class="row">
-                            <strong class="col s3">{{ workout.exercise_name }}:</strong>
-                            <div class="col s3">{{ workout.exercise_reps}} reps</div>
-                            <div class="col s3">{{ workout.exercise_sets}} sets</div>
-                            <div class="col s3">{{ workout.exercise_weight}} kg's</div>
-                        </div>
+                            <!-- here we add a loop to iterate through the excercices -->
+                            <div class="col s3">
+                                {% for ex_name in workout.exercise_name %}
+                                {{ ex_name }}:
+                                <br>
+                                {% endfor %}
+                            </div>
+                            <div class="col s3">
+                                {% for ex_reps in workout.exercise_reps %}
+                                {{ ex_reps }} reps
+                                <br>
+                                {% endfor %}
+                            </div>
+                            <div class="col s3">
+                                {% for ex_sets in workout.exercise_sets %}
+                                {{ ex_sets }} sets
+                                <br>
+                                {% endfor %}
+                            </div>
+                            <div class="col s3">
+                                {% for ex_weight in workout.exercise_weight %}
+                                {{ ex_weight }} kg's
+                                <br>
+                                {% endfor %}
+                            </div>
 
+                            <!-- <div class="col s3">{{ workout.exercise_reps}} reps</div>
+                            <div class="col s3">{{ workout.exercise_sets}} sets</div>
+                            <div class="col s3">{{ workout.exercise_weight}} kg's</div> -->
+                        </div>
                     </div>
                     {% endif %}
                 </li>
