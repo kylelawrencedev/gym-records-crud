@@ -156,16 +156,16 @@ def logout():
 @app.route("/add_workout", methods=["GET", "POST"])
 def add_workout():
     if request.method == "POST":
-        workout = {
-            "exercise_heading": request.form.get("exercise_heading"),
-            "exercise_name": request.form.get("exercise_name"),
-            "exercise_reps": request.form.get("exercise_reps"),
-            "exercise_sets": request.form.get("exercise_sets"),
-            "exercise_weight": request.form.get("exercise_weight"),
-            "exercise_date": request.form.get("exercise_date"),
+        workout = [{
+            "exercise_heading": request.form.getlist("exercise_heading"),
+            "exercise_name": request.form.getlist("exercise_name"),
+            "exercise_reps": request.form.getlist("exercise_reps"),
+            "exercise_sets": request.form.getlist("exercise_sets"),
+            "exercise_weight": request.form.getlist("exercise_weight"),
+            "exercise_date": request.form.getlist("exercise_date"),
             "created_by": session["user"],
-        }
-        mongo.db.workouts.insert_one(workout)
+        }]
+        mongo.db.workouts.insert_many(workout)
         flash("Workout Session Successfully Added")
         return redirect(url_for("get_overview"))
         
@@ -175,15 +175,15 @@ def add_workout():
 @app.route("/edit_workout/<exercise_id>", methods=["GET", "POST"])
 def edit_workout(exercise_id):
     if request.method == "POST":
-        submit = {
-            "exercise_heading": request.form.get("exercise_heading"),
-            "exercise_name": request.form.get("exercise_name"),
-            "exercise_reps": request.form.get("exercise_reps"),
-            "exercise_sets": request.form.get("exercise_sets"),
-            "exercise_weight": request.form.get("exercise_weight"),
-            "exercise_date": request.form.get("exercise_date"),
+        submit = [{
+            "exercise_heading": request.form.getlist("exercise_heading"),
+            "exercise_name": request.form.getlist("exercise_name"),
+            "exercise_reps": request.form.getlist("exercise_reps"),
+            "exercise_sets": request.form.getlist("exercise_sets"),
+            "exercise_weight": request.form.getlist("exercise_weight"),
+            "exercise_date": request.form.getlist("exercise_date"),
             "created_by": session["user"],
-        }
+        }]
         mongo.db.workouts.update({"_id": ObjectId(exercise_id)}, submit)
         flash("Workout Session Successfully Updated")
         return redirect(url_for("get_overview"))
