@@ -24,34 +24,35 @@
                 </div>
             </div>
             <!--Workout name, sets, reps and weight-->
-            <div class="row">
-            <table id="exerciseRow" class="responsive-table centered">
-                <tbody>
-                  <tr class="col s11">
-                    <td id="col0">
-                        <input id="exercise_name" name="exercise_name" type="text" class="validate" minlength="5"
-                        maxlength="30"placeholder="Exercise Name" required >
-                    </td>
-                    <td id="col1">
-                        <input id="exercise_reps" name="exercise_reps" type="number" class="validate" min="1"  placeholder="Reps" required>
-                    </td>
-                    <td id="col2">
-                        <input id="exercise_sets" name="exercise_sets" type="number" class="validate" min="1" placeholder="Sets" required>
-                    </td>
-                    <td id="col3">
-                        <input id="exercise_weight" name="exercise_weight" type="number" class="validate" min="1" placeholder="Weight" required>
-                    </td>
-                    <td id="col4">
-                        <input type="button" value="Add Exercise" onclick="addRow()">
-                    </td>
-                    <td id="col5">
-                        <input type="button" value="Delete Exercise" onclick="deleteRow()">
-                    </td">
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-              <br>
+                <table id="exerciseRow" class="responsive-table centered">
+                    <tbody>
+                        <tr>
+                            <td id="col0">
+                                <input id="exercise_name" name="exercise_name" type="text" class="validate"
+                                    minlength="5" maxlength="30" placeholder="Exercise Name" required>
+                            </td>
+                            <td id="col1">
+                                <input id="exercise_reps" name="exercise_reps" type="number" class="validate" min="1"
+                                    placeholder="Reps" required>
+                            </td>
+                            <td id="col2">
+                                <input id="exercise_sets" name="exercise_sets" type="number" class="validate" min="1"
+                                    placeholder="Sets" required>
+                            </td>
+                            <td id="col3">
+                                <input id="exercise_weight" name="exercise_weight" type="number" class="validate"
+                                    min="1" placeholder="Weight" required>
+                            </td>
+                            <td id="col4">
+                                <input type="button" value="Add Exercise" onclick="addRow()">
+                            </td>
+                            <td id="col5">
+                                <input type="button" value="Delete Exercise" onclick="deleteRow()">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                  <br>
             <!--Submit Button-->
             <div class="row">
                 <a class="col s5 btn-large red text-shadow" onclick="resetForm()">
@@ -64,6 +65,8 @@
                 </button>
             </div>
             </form>
+            
     </div>
+
 
 {% endblock %}
