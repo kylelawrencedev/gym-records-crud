@@ -30,40 +30,74 @@
                 </div>
             </div>
             <!--Workout name, sets, reps and weight-->
-            <table id="exerciseRow">
+            <table class="responsive-table centered">
                 <tr>
-                    <td id="col0">
+                    <td>
                         {% for ex_name in workout.exercise_name %}
                         <input id="exercise_name" name="exercise_name" type="text" class="validate" minlength="5"
                             maxlength="30" placeholder="Exercise Name" value="{{ ex_name }}" required>
                         {% endfor %}
                     </td>
-                    <td id="col1">
+                    <td>
                         {% for ex_reps in workout.exercise_reps %}
                         <input id="exercise_reps" name="exercise_reps" type="number" class="validate" min="1"
                             placeholder="Reps" value="{{ ex_reps }}" required>
                         {% endfor %}
                     </td>
-                    <td id="col2">
+                    <td>
                         {% for ex_sets in workout.exercise_sets %}
                         <input id="exercise_sets" name="exercise_sets" type="number" class="validate" min="1"
                             placeholder="Sets" value="{{ ex_sets }}" required>
                         {% endfor %}
                     </td>
-                    <td id="col3">
+                    <td>
                         {% for ex_weight in workout.exercise_weight %}
                         <input id="exercise_weight" name="exercise_weight" type="number" class="validate" min="1"
                             placeholder="Weight" value="{{ ex_weight }}" required>
                         {% endfor %}
                     </td>
-                    <td id="col4">
-                        <input type="button" class="btn-small red" value="Delete Exercise" onclick="deleteRow()">
-                    </td>
-                    <td id="col5">
-                        <input type="button" class="btn-small blue darken-4" value="Add Exercise" onclick="addRow()">
-                    </td>
                 </tr>
             </table>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <a type="button" class="btn-large orange lighten-1 text-shadow" onclick="addExercise()">
+                        Add Exercise
+                    </a>
+                </div>
+            </div>
+            <!--Hidden Until Add Exercise clicked-->
+            <div id="table">
+            <table id="exerciseRow" class="responsive-table centered">
+                <tbody>
+                    <tr>
+                        <td id="col0">
+                            <input id="exercise_name1" name="exercise_name" type="text" class="validate" minlength="5"
+                                maxlength="30" placeholder="Exercise Name" >
+                        </td>
+                        <td id="col1">
+                            <input id="exercise_reps1" name="exercise_reps" type="number" class="validate" min="1"
+                                placeholder="Reps" >
+                        </td>
+                        <td id="col2">
+                            <input id="exercise_sets1" name="exercise_sets" type="number" class="validate " min="1"
+                                placeholder="Sets" >
+                        </td>
+                        <td id="col3">
+                            <input id="exercise_weight1" name="exercise_weight" type="number" class="validate" min="1"
+                                placeholder="Weight" >
+                        </td>
+                        <td id="col4">
+                            <input type="button" class="btn-small red" value="Delete Exercise" onclick="deleteRow()">
+                        </td>
+                        <td id="col5">
+                            <input type="button" class="btn-small blue darken-4" value="Add Exercise"
+                                onclick="addRow()">
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
             <br>
             <!--Submit Button-->
             <div class="row">
