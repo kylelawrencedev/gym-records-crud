@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-        <div class="row">
+        <!--Hide On medium and down devices-->
+        <div class="row hide-on-small-only">
             <div class="col s6">
-                <img class="home" src="static/images/gym.jpg" alt="Guy and Girl using rope in gym">
+                <img class="responsive-img home" src="static/images/gym.jpg" alt="Guy and Girl using rope in gym">
             </div>
             <div class="col s6">
-                <h4 class="center-align">Want to Track <b><u>YOUR</u></b> Gym Progress?</h4>
+                <h4 class="center-align">Want to Track <b><u> <a  href="{{ url_for('account') }}">YOUR</a></u></b> Gym Progress?</h4>
                 <div class="center-align">
                     <h3 class=""><b> Open an Account <br> and <br> Start Tracking!</b></h3>
                     <a type="button" href="{{ url_for('account') }}"
@@ -15,31 +15,89 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col s6 hide-on-med-and-down row">
+        <!--Hide On medium and down devices-->
+        <div class="row hide-on-small-only">
+            <div class="col s6 row">
                 <p>
-                    <q cite="https://medium.com/@amberlyeveritt374/arnold-schwarzenegger-gym-motivation-motivational-speech-c5b5fe8b10a2">
+                    <q
+                        cite="https://medium.com/@amberlyeveritt374/arnold-schwarzenegger-gym-motivation-motivational-speech-c5b5fe8b10a2">
 
                         Why do you want to workout ? What is your goal ? The most important thing is that you
                         have a vision.
                         That you have a goal. Because without that vision and without that goal again you're
-                        drifting around. You never gonna end up anywhere. People don’t become successful just by accident. You know I
-                        mean, maybe the guy that found gold in California at the start of the Gold Rush. But don’t count on that. That’s
-                        once in a lifetime kind of a situation. So, you got to really have a specific goal and to me to have that
-                        vision that I want to be Mister Universe. That I want to be the greatest bodybuilder of all time.
-                        That as a great vision and that specificly to look like Reg Park, and to be apdate that stage, to
-                        lift the trophy overhead. And to win the championship over, over and over again. So that was a great
+                        drifting around. You never gonna end up anywhere. People don’t become successful just by
+                        accident. You know I
+                        mean, maybe the guy that found gold in California at the start of the Gold Rush. But don’t count
+                        on that. That’s
+                        once in a lifetime kind of a situation. So, you got to really have a specific goal and to me to
+                        have that
+                        vision that I want to be Mister Universe. That I want to be the greatest bodybuilder of all
+                        time.
+                        That as a great vision and that specificly to look like Reg Park, and to be apdate that stage,
+                        to
+                        lift the trophy overhead. And to win the championship over, over and over again. So that was a
+                        great
                         goal.
                         You have to have a goal, it doesn’t have to be that specific goal. But it has to have some
-                        goal. This is why I always recommend to people to sit down, take your time and think about it. Why do
+                        goal. This is why I always recommend to people to sit down, take your time and think about it.
+                        Why do
                         you want to workout? <b>What is <u>YOUR</u> goal ?</b>
                     </q>
                     <br>
                 </p>
-                <i><a href="https://medium.com/@amberlyeveritt374/arnold-schwarzenegger-gym-motivation-motivational-speech-c5b5fe8b10a2" target="_blank" rel="noreferrer" > Arnold Schwarzenegger</a></i>
+                <i><a href="https://medium.com/@amberlyeveritt374/arnold-schwarzenegger-gym-motivation-motivational-speech-c5b5fe8b10a2"
+                        target="_blank" rel="noreferrer"> Arnold Schwarzenegger</a></i>
             </div>
             <div class="col s6">
-                <img class="home" src="static/images/gym_2.jpg" alt="Gym equipment">
+                <img class="home responsive-img" src="static/images/gym_2.jpg" alt="Gym equipment">
+            </div>
+        </div>
+        <!--Show On medium devices and down-->
+        <div class="hide-on-med-and-up">
+            <div class="row">
+                <img class="responsive-img home" src="static/images/gym.jpg" alt="Guy and Girl using rope in gym">
+            </div>
+            <div class="row">
+                <div class="center-align">
+                    <h4>Want to Track <b><u>YOUR</u></b> Gym Progress?</h4>
+                    <h3 class=""><b> Open an Account <br> and <br> Start Tracking!</b></h3>
+                    <a type="button" href="{{ url_for('account') }}" class="btn-large cyan lighten-1 black-text">
+                        <u>Start Now</u> </a>
+                </div>
+            </div>
+            <div class="row">
+                <img class="home responsive-img" src="static/images/gym_2.jpg" alt="Gym equipment">
+            </div>
+            <div class="row">
+                <p>
+                    <q
+                        cite="https://medium.com/@amberlyeveritt374/arnold-schwarzenegger-gym-motivation-motivational-speech-c5b5fe8b10a2">
+
+                        Why do you want to workout ? What is your goal ? The most important thing is that you
+                        have a vision.
+                        That you have a goal. Because without that vision and without that goal again you're
+                        drifting around. You never gonna end up anywhere. People don’t become successful just by
+                        accident. You know I
+                        mean, maybe the guy that found gold in California at the start of the Gold Rush. But don’t count
+                        on that. That’s
+                        once in a lifetime kind of a situation. So, you got to really have a specific goal and to me to
+                        have that
+                        vision that I want to be Mister Universe. That I want to be the greatest bodybuilder of all
+                        time.
+                        That as a great vision and that specificly to look like Reg Park, and to be apdate that stage,
+                        to
+                        lift the trophy overhead. And to win the championship over, over and over again. So that was a
+                        great
+                        goal.
+                        You have to have a goal, it doesn’t have to be that specific goal. But it has to have some
+                        goal. This is why I always recommend to people to sit down, take your time and think about it.
+                        Why do
+                        you want to workout? <b>What is <u>YOUR</u> goal ?</b>
+                    </q>
+                    <br>
+                </p>
+                <i><a href="https://medium.com/@amberlyeveritt374/arnold-schwarzenegger-gym-motivation-motivational-speech-c5b5fe8b10a2"
+                        target="_blank" rel="noreferrer"> Arnold Schwarzenegger</a></i>
             </div>
         </div>
 
