@@ -93,7 +93,7 @@ function deleteRow() {
         let row = TABLE.deleteRow(rowCount-1);
         rowCount--;
     } else{
-        alert("There has to be more than one Exercise")
+        alert("Cannot Delete Exercise")
     }
 }
 function addRow() {
@@ -108,6 +108,31 @@ function addRow() {
 		cell.innerHTML=copycel;
     }
 }
+
+document.getElementById("table").style.display = "none";
+document.getElementById("exercise_name1").disabled = true;
+document.getElementById("exercise_reps1").disabled = true;
+document.getElementById("exercise_sets1").disabled = true;
+document.getElementById("exercise_weight1").disabled = true;
+
+function addExercise() {
+    let table = document.getElementById("table")
+    if (table.style.display === "none") {
+        table.style.display = "block";
+        document.getElementById("exercise_name1").disabled = false;
+        document.getElementById("exercise_reps1").disabled = false;
+        document.getElementById("exercise_sets1").disabled = false;
+        document.getElementById("exercise_weight1").disabled = false;
+    } else {
+        table.style.display = "none";
+        document.getElementById("exercise_name1").disabled = true;
+        document.getElementById("exercise_reps1").disabled = true;
+        document.getElementById("exercise_sets1").disabled = true;
+        document.getElementById("exercise_weight1").disabled = true;
+    }
+}
 function resetForm() {
     document.getElementById('workoutForm').reset();
 }
+
+
