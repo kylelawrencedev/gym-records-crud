@@ -1,30 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <section>
-        <div">
-            <img src="" alt="">
+
+        <div class="row">
+            <div class="col s6">
+                <img class="home" src="static/images/gym.jpg" alt="Guy and Girl using rope in gym">
+            </div>
+            <div class="col s6">
+                <h4 class="center-align">Want to Track <b><u>YOUR</u></b> Gym Progress?</h4>
+                <div class="center-align">
+                    <h3 class=""><b> Open an Account <br> and <br> Start Tracking!</b></h3>
+                    <a type="button" href="{{ url_for('account') }}"
+                        class="btn-large cyan lighten-1 black-text center-align"> <u>Start Now</u> </a>
+                </div>
+            </div>
         </div>
-        <div class="right">
-            <h3 class="">Question Heading</h3>
-            <h3 class="">Bigger Answer Header</h3>
-            <a type="button" href="{{ url_for('account') }}" class="col s6 btn-large cyan lighten-1 black-text center-align">Start Now</a>
+        <div class="row">
+            <div class="col s6 hide-on-med-and-down row">
+                <p>
+                    <q cite="https://medium.com/@amberlyeveritt374/arnold-schwarzenegger-gym-motivation-motivational-speech-c5b5fe8b10a2">
+
+                        Why do you want to workout ? What is your goal ? The most important thing is that you
+                        have a vision.
+                        That you have a goal. Because without that vision and without that goal again you're
+                        drifting around. You never gonna end up anywhere. People don’t become successful just by accident. You know I
+                        mean, maybe the guy that found gold in California at the start of the Gold Rush. But don’t count on that. That’s
+                        once in a lifetime kind of a situation. So, you got to really have a specific goal and to me to have that
+                        vision that I want to be Mister Universe. That I want to be the greatest bodybuilder of all time.
+                        That as a great vision and that specificly to look like Reg Park, and to be apdate that stage, to
+                        lift the trophy overhead. And to win the championship over, over and over again. So that was a great
+                        goal.
+                        You have to have a goal, it doesn’t have to be that specific goal. But it has to have some
+                        goal. This is why I always recommend to people to sit down, take your time and think about it. Why do
+                        you want to workout? <b>What is <u>YOUR</u> goal ?</b>
+                    </q>
+                    <br>
+                </p>
+                <i><a href="https://medium.com/@amberlyeveritt374/arnold-schwarzenegger-gym-motivation-motivational-speech-c5b5fe8b10a2" target="_blank" rel="noreferrer" > Arnold Schwarzenegger</a></i>
+            </div>
+            <div class="col s6">
+                <img class="home" src="static/images/gym_2.jpg" alt="Gym equipment">
+            </div>
         </div>
-    </section>
-    <section>
-        <div class="left hide-on-med-and-down row">
-            <p class="col s6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec consectetur felis, ut consequat mi.
-                Aliquam et porta nibh, eu placerat ex. Etiam faucibus risus vel dignissim sodales. Nunc elementum lectus
-                ipsum, at efficitur nibh interdum ut. Aenean vestibulum ut tellus quis ullamcorper. Pellentesque
-                volutpat mi in metus scelerisque volutpat. Phasellus ultricies eget felis vel volutpat. Aenean placerat,
-                felis ut porttitor pretium, massa enim pretium ex, a fermentum mi massa sed felis. Praesent faucibus
-                massa ac volutpat bibendum. Proin finibus sapien ut dolor maximus consequat vel ut felis. Suspendisse
-                sit amet elit ac quam lobortis luctus. Proin feugiat convallis justo nec semper. Nullam eget leo
-                posuere, fermentum mi id, molestie urna. Integer feugiat tortor vitae est consectetur, imperdiet
-                pellentesque tortor mattis.
-            </p>
-            <img src="" alt="">
-        </div>
-    </section>
 
 {% endblock %}
