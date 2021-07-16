@@ -24,49 +24,51 @@
                 </div>
             </div>
             <!--Workout name, sets, reps and weight-->
-                <table id="exerciseRow" class="responsive-table centered">
-                    <tbody>
-                        <tr>
-                            <td id="col0">
-                                <input id="exercise_name" name="exercise_name" type="text" class="validate"
-                                    minlength="5" maxlength="30" placeholder="Exercise Name" required>
-                            </td>
-                            <td id="col1">
-                                <input id="exercise_reps" name="exercise_reps" type="number" class="validate" min="1"
-                                    placeholder="Reps" required>
-                            </td>
-                            <td id="col2">
-                                <input id="exercise_sets" name="exercise_sets" type="number" class="validate" min="1"
-                                    placeholder="Sets" required>
-                            </td>
-                            <td id="col3">
-                                <input id="exercise_weight" name="exercise_weight" type="number" class="validate"
-                                    min="1" placeholder="Weight" required>
-                            </td>
-                            <td id="col4">
-                                <input type="button" class="btn-small red" value="Delete Exercise" onclick="deleteRow()">
-                            </td>
-                            <td id="col5">
-                                <input type="button" class="btn-small blue darken-4" value="Add Exercise" onclick="addRow()">
-                            </td>
+            <table id="exerciseRow" class="responsive-table centered">
+                <tbody>
+                    <tr>
+                        <td id="col0">
+                            <input id="exercise_name" name="exercise_name" type="text" class="validate" minlength="5"
+                                maxlength="30" placeholder="Exercise Name" required>
+                        </td>
+                        <td id="col1">
+                            <input id="exercise_reps" name="exercise_reps" type="number" class="validate" min="1"
+                                placeholder="Reps" required>
+                        </td>
+                        <td id="col2">
+                            <input id="exercise_sets" name="exercise_sets" type="number" class="validate" min="1"
+                                placeholder="Sets" required>
+                        </td>
+                        <td id="col3">
+                            <input id="exercise_weight" name="exercise_weight" type="number" class="validate" min="1"
+                                placeholder="Weight" required>
+                        </td>
+                        <td id="col4">
+                            <input type="button" class="btn-small red" value="Delete Exercise" onclick="deleteRow()">
+                        </td>
+                        <td id="col5">
+                            <input type="button" class="btn-small blue darken-4" value="Add Exercise"
+                                onclick="addRow()">
+                        </td>
 
-                        </tr>
-                    </tbody>
-                </table>
-                  <br>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
             <!--Submit Button-->
             <div class="row">
-                <a class="col s5 btn-large red text-shadow" onclick="resetForm()">
-                    Reset
-                </a>
-                <div class="col s2"></div>
-                <button type="submit" class="col s5 btn-large blue darken-4 text-shadow"
-                    href="{{ url_for('get_overview') }}">
-                    Add
-                </button>
+                <div class="col s12 center-align">
+                    <a class="btn-large red text-shadow" onclick="resetForm()">
+                        Reset
+                    </a>
+                    <button type="submit" class="btn-large blue darken-4 text-shadow"
+                        href="{{ url_for('get_overview') }}">
+                        Add Workout
+                    </button>
+                </div>
             </div>
-            </form>
-            
+        </form>
+
     </div>
 
 
