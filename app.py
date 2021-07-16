@@ -145,6 +145,14 @@ def edit_record(record_id):
     return render_template("edit_record.html", record=record)
 
 
+@app.route("/delete_record/<record_id>")
+def delete_record(record_id):
+    mongo.db.records.remove({"_id": ObjectId(record_id)})
+    flash("Record Deleted")
+    return redirect(url_for("profile", username=session["user"]))
+
+
+
 @app.route("/logout")
 def logout():
     # remove user from session cookies
