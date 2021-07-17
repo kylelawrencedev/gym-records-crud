@@ -26,7 +26,7 @@ def home():
 
 @app.route("/get_overview")
 def get_overview():
-    workouts = list(mongo.db.workouts.find())
+    workouts = list(mongo.db.workouts.find().sort("exercise_date", -1))
     return render_template("overview.html", workouts=workouts)
 
 
