@@ -359,6 +359,20 @@ def add_workout():
         user = session["user"].lower()
 
         if user == session["user"].lower():
+            if request.method == "POST":
+                workout = [{
+                    "exercise_heading": request.form.getlist("exercise_heading"),
+                    "exercise_name": request.form.getlist("exercise_name"),
+                    "exercise_reps": request.form.getlist("exercise_reps"),
+                    "exercise_sets": request.form.getlist("exercise_sets"),
+                    "exercise_weight": request.form.getlist("exercise_weight"),
+                    "exercise_date": request.form.getlist("exercise_date"),
+                    "created_by": session["user"],
+                    }]
+                mongo.db.workouts.insert_many(workout)
+                flash("Workout Session Successfully Added")
+                return redirect(url_for("get_overview"))
+            
             return render_template("add_workout.html")
 
         # prevent other registered user access
@@ -368,22 +382,6 @@ def add_workout():
     # prevent guest user access
     else:
         return render_template("403.html")
-
-    if request.method == "POST":
-        workout = [{
-            "exercise_heading": request.form.getlist("exercise_heading"),
-            "exercise_name": request.form.getlist("exercise_name"),
-            "exercise_reps": request.form.getlist("exercise_reps"),
-            "exercise_sets": request.form.getlist("exercise_sets"),
-            "exercise_weight": request.form.getlist("exercise_weight"),
-            "exercise_date": request.form.getlist("exercise_date"),
-            "created_by": session["user"],
-            }]
-        mongo.db.workouts.insert_many(workout)
-        flash("Workout Session Successfully Added")
-        return redirect(url_for("get_overview"))
-
-    return render_template("add_workout.html")
 
 
 @app.route("/edit_workout/<exercise_id>", methods=["GET", "POST"])
