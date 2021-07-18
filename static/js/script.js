@@ -86,6 +86,30 @@ $(document).ready(function () {
     }
 
 });
+/* Check if password input type is password.
+Change password type to text on click
+*/
+function togglePassword() {
+    let password1 = document.getElementById("password1");
+    if (password1.type === "password") {
+        password1.type = "text";
+    } else {
+        password1.type = "password";
+    }
+    let password = document.getElementById("password");
+    if (password.type === "password") {
+        password.type = "text";
+    } else {
+        password.type = "password";
+    }
+    let passwordConfirm = document.getElementById("passwordConfirm");
+    if (passwordConfirm.type === "password") {
+        passwordConfirm.type = "text";
+    } else {
+        passwordConfirm.type = "password";
+    }
+}
+
 function deleteRow() {
     const TABLE = document.getElementById('exerciseRow');
     let rowCount = TABLE.rows.length;

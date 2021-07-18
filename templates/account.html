@@ -32,8 +32,15 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-user-lock prefix blue-text text-darken-4"></i>
-                                    <input id="password1" name="password" type="password" class="validate" required>
+                                    <input id="password1" name="password" type="password" class="validate password" required>
                                     <label for="password1">Password</label>
+                                    <div class="switch">
+                                        <label>
+                                          <input type="checkbox" onclick="togglePassword()">
+                                          <span class="lever"></span>
+                                          Show Password
+                                        </label>
+                                      </div>
                                 </div>
                             </div>
                             <!-- Sign In & Cancel Button -->
@@ -79,6 +86,13 @@
                                         data-success="Password Match">
                                         Password <i>(Confirm)</i>
                                     </label>
+                                    <div class="switch">
+                                        <label>
+                                          <input type="checkbox" onclick="togglePassword()">
+                                          <span class="lever"></span>
+                                          Show Password
+                                        </label>
+                                      </div>
                                 </div>
                             </div>
                             <!-- signup & cancel button -->
