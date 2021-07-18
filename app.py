@@ -17,6 +17,14 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+# https://github.com/AudreyLL88/MS3__Sante/blob/master/app.py Help for user signed in or guest user
+def valid_user(username):
+    if "user" in session.keys():
+        if session["user"] == username:
+            return True
+
+    return False
+
 
 @app.route("/")
 @app.route("/home")
@@ -26,12 +34,24 @@ def home():
 
 @app.route("/get_overview")
 def get_overview():
+    if "user" in session:
+        session["user"].lower()
+    # prevent guest user access
+    else:
+        return render_template("403.html")
+
     workouts = list(mongo.db.workouts.find().sort("exercise_date", -1))
     return render_template("overview.html", workouts=workouts)
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    if "user" in session:
+        session["user"].lower()
+    # prevent guest user access
+    else:
+        return render_template("403.html")
+
     query = request.form.get("query")
     workouts = list(mongo.db.workouts.find({"$text": {"$search": query}}))
     return render_template("overview.html", workouts=workouts)
@@ -103,6 +123,9 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
+    if not valid_user(username.lower()):
+        return redirect(url_for("login"))
+
     if session["user"]:
         return render_template("profile.html", 
             username=username, records=records)
@@ -112,6 +135,20 @@ def profile(username):
 
 @app.route("/add_record", methods=["GET", "POST"])
 def add_record():
+    if "user" in session:
+        user = session["user"].lower()
+
+        if user == session["user"].lower():
+            return render_template("add_record.html")
+
+        # prevent other registered user access
+        else:
+            return redirect(url_for("login"))
+
+    # prevent user from brute forcing
+    else:
+        return render_template("403.html")
+
     if request.method == "POST":
         record = {
             "user_fullName": request.form.get("user_fullName"),
@@ -129,6 +166,11 @@ def add_record():
 
 @app.route("/edit_record/<record_id>", methods=["GET", "POST"])
 def edit_record(record_id):
+    record_data = mongo.db.records.find_one({"_id": ObjectId(record_id)})
+
+    if not valid_user(record_data["created_by"]):
+        return redirect(url_for("login"))
+
     if request.method == "POST":
         update = {
             "user_fullName": request.form.get("user_fullName"),
@@ -147,10 +189,14 @@ def edit_record(record_id):
 
 @app.route("/delete_record/<record_id>")
 def delete_record(record_id):
+    record_data = mongo.db.records.find_one({"_id": ObjectId(record_id)})
+
+    if not valid_user(record_data["created_by"]):
+        return redirect(url_for("login"))
+
     mongo.db.records.remove({"_id": ObjectId(record_id)})
     flash("Record Deleted")
     return redirect(url_for("profile", username=session["user"]))
-
 
 
 @app.route("/logout")
@@ -163,6 +209,20 @@ def logout():
 
 @app.route("/add_workout", methods=["GET", "POST"])
 def add_workout():
+    if "user" in session:
+        user = session["user"].lower()
+
+        if user == session["user"].lower():
+            return render_template("add_workout.html")
+
+        # prevent other registered user access
+        else:
+            return redirect(url_for("login"))
+
+    # prevent guest user access
+    else:
+        return render_template("403.html")
+
     if request.method == "POST":
         workout = [{
             "exercise_heading": request.form.getlist("exercise_heading"),
@@ -172,7 +232,7 @@ def add_workout():
             "exercise_weight": request.form.getlist("exercise_weight"),
             "exercise_date": request.form.getlist("exercise_date"),
             "created_by": session["user"],
-        }]
+            }]
         mongo.db.workouts.insert_many(workout)
         flash("Workout Session Successfully Added")
         return redirect(url_for("get_overview"))
@@ -182,6 +242,11 @@ def add_workout():
 
 @app.route("/edit_workout/<exercise_id>", methods=["GET", "POST"])
 def edit_workout(exercise_id):
+    workout_data = mongo.db.workouts.find_one({"_id": ObjectId(exercise_id)})
+
+    if not valid_user(workout_data["created_by"]):
+        return redirect(url_for("login"))
+
     if request.method == "POST":
         submit = {
             "exercise_heading": request.form.getlist("exercise_heading"),
@@ -201,6 +266,10 @@ def edit_workout(exercise_id):
 
 @app.route("/delete_workout/<exercise_id>")
 def delete_workout(exercise_id):
+    workout_data = mongo.db.workouts.find_one({"_id": ObjectId(exercise_id)})
+
+    if not valid_user(workout_data["created_by"]):
+        return redirect(url_for("login"))
     mongo.db.workouts.remove({"_id": ObjectId(exercise_id)})
     flash("Workout Deleted")
     return redirect(url_for("get_overview"))
