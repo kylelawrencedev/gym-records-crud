@@ -286,7 +286,7 @@ def edit_record(record_id):
             "date_added": request.form.get("date_added"),
             "created_by": session["user"],
         }
-        mongo.db.records.update({"_id": ObjectId(record_id)}, update)
+        mongo.db.records.update_many({"_id": ObjectId(record_id)}, update)
         flash("Record Successfully Updated")
         return redirect(url_for("profile", username=session["user"]))
 
