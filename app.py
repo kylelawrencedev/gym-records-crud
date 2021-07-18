@@ -453,7 +453,7 @@ def delete_workout(exercise_id):
 
 # Error Handling
 @app.errorhandler(403)
-def forbidden():
+def forbidden(e):
     '''
     If user tries to access a forbidden link/page on the site
 
@@ -467,7 +467,7 @@ def forbidden():
 
 
 @app.errorhandler(404)
-def page_not_found():
+def page_not_found(e):
     '''
     If the user enters a url for the site that cannot be found,
     they are shown this page
@@ -482,7 +482,7 @@ def page_not_found():
 
 # Error 500 handler route
 @app.errorhandler(500)
-def server_error():
+def server_error(e):
     '''
     If there is a server issue, the user will be shown this page
 
