@@ -41,3 +41,9 @@ tr {
     margin: 0 5%;
     font-size: 2.1rem;
 }
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: #ffa826af;
+}
+.switch label input[type=checkbox]:checked+.lever:after {
+    background-color: #FFA726;
+}
