@@ -62,7 +62,7 @@ Set workouts for the future and when that date comes around, the user will be ab
 
 # Structure:
 ### Data Schema
-
+![Data Schema](static/images/data_schema.jpg)
 # Surface:
 
 ### Fonts & Colours
