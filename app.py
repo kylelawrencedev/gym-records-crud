@@ -216,7 +216,7 @@ def profile(username):
     return redirect(url_for("login"))
 
 
-@app.route("/add_record", methods=["GET", "POST"])
+@app.route("/add_record/", methods=["GET", "POST"])
 def add_record():
     '''
     Lets user fill out form for records. All data entered
