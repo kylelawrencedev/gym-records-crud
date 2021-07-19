@@ -4,14 +4,14 @@
 ### Project Purpose
 I was at the gym the other day and I saw someone pull out a booklet that had columns on. They were writing down the weights they had done for each different exercise. This made me think it would be perfect if I could do this but not have to worry about losing the booklet or forgetting it at home. I always have my phone on me.
 ### User Stories
-1. 	As a user I want to be able to log into my own account, that is password protected.
-1. 	As a new user I want to be able to create a new account with a username and a password.
-1. 	As a user I want to have a feature that allows me to add my gym session, with all my workouts, repetitions, sets, and weights that I did during the session, this feature will also allow me to select the date of the gym session.
-1.	As a user I want to add, edit, and delete any of the workouts I have created. 
-1.	As a user I want to see all my workouts that I have done over the last week.
-1.	As a user I want to be able to search by dates what workouts I did for that specific date, or date range.
-1.	As a user I want to be able to see the latest week of workouts and the previous weeks workouts. With all other workouts being able to be found by searching by dates.
-1.	As a user I want all my gym sessions and weeks to only be able to be seen by me, no other user can see my sessions. 
+* 	As a user I want to be able to log into my own account, that is password protected.
+* 	As a new user I want to be able to create a new account with a username and a password.
+* 	As a user I want to have a feature that allows me to add my gym session, with all my workouts, repetitions, sets, and weights that I did during the session, this feature will also allow me to select the date of the gym session.
+*	As a user I want to add, edit, and delete any of the workouts I have created. 
+*	As a user I want to see all my workouts that I have done over the last week.
+*	As a user I want to be able to search by dates what workouts I did for that specific date, or date range.
+*	As a user I want to be able to see the latest week of workouts and the previous weeks workouts. With all other workouts being able to be found by searching by dates.
+*	As a user I want all my gym sessions and weeks to only be able to be seen by me, no other user can see my sessions. 
 
 # Scope & Skeleton:
 ## Features
