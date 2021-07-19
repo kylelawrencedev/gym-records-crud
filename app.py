@@ -234,29 +234,21 @@ def add_record():
         user = session["user"].lower()
 
         if user == session["user"].lower():
+            if request.method == "POST":
+                record = {
+                    "user_fullName": request.form.get("user_fullName"),
+                    "user_height": request.form.get("user_height"),
+                    "user_weight": request.form.get("user_weight"),
+                    "date_added": request.form.get("date_added"),
+                    "created_by": session["user"],
+                }
+                mongo.db.records.insert_one(record)
+                flash("Profile Records Successfully Added")
+                return redirect(url_for("profile", username=session["user"]))
+
             return render_template("add_record.html")
-
-        # prevent other registered user access
-        else:
-            return redirect(url_for("login"))
-
-    # prevent user from brute forcing
     else:
         return render_template("403.html")
-
-    if request.method == "POST":
-        record = {
-            "user_fullName": request.form.get("user_fullName"),
-            "user_height": request.form.get("user_height"),
-            "user_weight": request.form.get("user_weight"),
-            "date_added": request.form.get("date_added"),
-            "created_by": session["user"],
-        }
-        mongo.db.records.insert_one(record)
-        flash("Profile Records Successfully Added")
-        return redirect(url_for("profile", username=session["user"]))
-
-    return render_template("add_record.html")
 
 
 @app.route("/edit_record/<record_id>", methods=["GET", "POST"])
