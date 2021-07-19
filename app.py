@@ -278,7 +278,7 @@ def edit_record(record_id):
             "date_added": request.form.get("date_added"),
             "created_by": session["user"],
         }
-        mongo.db.records.update_many({"_id": ObjectId(record_id)}, update)
+        mongo.db.records.update({"_id": ObjectId(record_id)}, update)
         flash("Record Successfully Updated")
         return redirect(url_for("profile", username=session["user"]))
 
@@ -409,7 +409,7 @@ def edit_workout(exercise_id):
             "exercise_date": request.form.getlist("exercise_date"),
             "created_by": session["user"],
         }
-        mongo.db.workouts.update_many({"_id": ObjectId(exercise_id)}, submit)
+        mongo.db.workouts.update({"_id": ObjectId(exercise_id)}, submit)
         flash("Workout Session Successfully Updated")
         return redirect(url_for("get_overview"))
     workout = mongo.db.workouts.find_one({"_id": ObjectId(exercise_id)})
