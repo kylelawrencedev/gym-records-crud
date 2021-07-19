@@ -26,11 +26,11 @@ Show a log in and sign-up button for the users at the top of the page. For the b
 
 * Edit/Delete: On the right hand side of the gym session heading will be two buttons, one to delete the gym session and one to edit the session in case the user input something wrong into the session. 
 
-### New Session Page:
+### New Workout Page:
 
-The user will land on a new page with a form for the new session. This form will have an input field for the user to give the session a heading. Below this input field will be another input field with the name of the workout for the user to put. “Workout: Bicep curls”. Next to this input field will be 3 dropdown options. These options will be Reps, sets and weight.
+* Form: The user will land on a new page with a form for the new workout. This form will have an input field for the user to give the workout a heading. Below this input field will be another input field with the name of the workout for the user to put. “Workout: Bicep curls”. Next to this input field will be 3 dropdown options. These options will be Reps, sets and weight.
 
-At the end of the row will be a plus sign. This sign adds a new line with the same input fields for the user to add a new workout. At the end of this row will be another plus sign for the user to add another workout. But first the first row this sign will now be a minus sign, this means the user can now remove this workout. The last workout will always have a plus sign next to it and a minus sign for the user to add new workouts or remove the last workout. But all the other rows will have a minus next to it. The first row will never have a minus sign next to it if another workout has not been added.
+* Add/Delete Exercise: At the end of the row will be the option to add and delete exercise. The add exercise button adds a new line with the same input fields for the user to add a new workout. At the end of this row will be another add exercise button for the user to add another exercise, and a delete button for the user to delete that exercise. The user will not be able to delete the first exercise, there has to be a minimum of 1 exercise for the form to submit to the database.
 
 ### Sign-In Page & Sign-Up Page:
 
