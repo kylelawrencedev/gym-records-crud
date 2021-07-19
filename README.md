@@ -32,11 +32,14 @@ Show a log in and sign-up button for the users at the top of the page. For the b
 
 * Add/Delete Exercise: At the end of the row will be the option to add and delete exercise. The add exercise button adds a new line with the same input fields for the user to add a new workout. At the end of this row will be another add exercise button for the user to add another exercise, and a delete button for the user to delete that exercise. The user will not be able to delete the first exercise, there has to be a minimum of 1 exercise for the form to submit to the database.
 
-### Sign-In Page & Sign-Up Page:
+### Login & Create Account:
 
-Sign-in and sign-up pages will be remarkably similar except for some small differences. Both will ask the user for their username and password. However, the sign-up page will ask the user to confirm their password. This makes sure the user knows what password that they are typing in.Below the password field will be some small text telling the user the requirements for the password. This will say, “Must be a minimum of 5 characters”. Having this will help the user fill out the form quicker and feel less frustrated because they know what the requirements are.
+* Login & Create Account Forms: Forms will be remarkably similar except for some small differences. Both will ask the user for their username and password. However, the create account form will ask the user to confirm their password. This makes sure the user knows what password that they are typing in. Below the password field will be some small text telling the user the requirements for the password. This will say, “Must be a minimum of 5 characters”. Having this will help the user fill out the form quicker and feel less frustrated because they know what the requirements are.
 
-At the bottom of the sign-in and sign-up forms will be two buttons. One button will be to cancel, this will take the user to the home page, and the other button will say “Sign In” and “Sign Up”.  Underneath these two buttons on the sign in form will be a link that say “New User? Sign Up”, this is for if the user happens to end up on the sign in page when they need the sign-up page. If the user clicks this link, it will take them to the sign-up form page. For the sign-up form page underneath the two buttons, will be a link that says, “Already signed up? Sign In”, clicking this link will take the user to the sign-in form page.
+* Password: Passwords will be hashed by werkzeug, with a salt length of 128. The user will be able to see the password they are typing in my toggling the show password toggle at the end of the form. This option will be available on both forms.
+
+* Logging In: At the bottom of the login and create account forms will be two buttons. One button will be to cancel, this will take the user to the home page, and the other button will say “Login” and “Create Account”.
+
 ## Future Features
 ### Share Button:
 
