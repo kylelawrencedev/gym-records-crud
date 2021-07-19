@@ -26,12 +26,6 @@ Show the current weeks gym sessions at the top of the page, with the Session hea
 
 At the bottom of the gym session will be two buttons, one to delete the gym session and one to edit the session in case the user input something wrong into the session. Underneath the previous week’s gym sessions is a button that says, “View All”. Pressing this button will show the user all their previous gym sessions plus the current sessions.
 
-### New Week Page:
-
-The new week page will have a start date, which the user will choose for when they want that week to start. And an end date, which is for when the user wants the week to end. This week will be numbered after the previous week. If it is the first week then it will be “Week 1”, if it is the 10th week then it will be “Week 10”.
-
-Below the date pickers and what the week number will be, there will be 2 buttons. One that says cancel, if the user wants to stop creating a new week. And another button for once the user has finished filling out the form that will say, “Create”. This button will then create the week. This newly created week will become the user’s new current week. Which will mean it shows at the top of the Overview page.
-
 ### New Session Page:
 
 The user will land on a new page with a form for the new session. This form will have an input field for the user to give the session a heading. Below this input field will be another input field with the name of the workout for the user to put. “Workout: Bicep curls”. Next to this input field will be 3 dropdown options. These options will be Reps, sets and weight.
@@ -43,16 +37,7 @@ At the end of the row will be a plus sign. This sign adds a new line with the sa
 Sign-in and sign-up pages will be remarkably similar except for some small differences. Both will ask the user for their username and password. However, the sign-up page will ask the user to confirm their password. This makes sure the user knows what password that they are typing in.Below the password field will be some small text telling the user the requirements for the password. This will say, “Must be a minimum of 5 characters”. Having this will help the user fill out the form quicker and feel less frustrated because they know what the requirements are.
 
 At the bottom of the sign-in and sign-up forms will be two buttons. One button will be to cancel, this will take the user to the home page, and the other button will say “Sign In” and “Sign Up”.  Underneath these two buttons on the sign in form will be a link that say “New User? Sign Up”, this is for if the user happens to end up on the sign in page when they need the sign-up page. If the user clicks this link, it will take them to the sign-up form page. For the sign-up form page underneath the two buttons, will be a link that says, “Already signed up? Sign In”, clicking this link will take the user to the sign-in form page.
-
-### Contact Us Page:
-
-The contact us page will be a form; the user will put their username and email address. This way we can find their account on the database using their username and contact them using their email. Below the username and email inputs, will be a text area for the user to type whatever they wish to say to us. At the bottom of the form will be two buttons. On the left will be a button that says cancel, and when clicked the user will be taken back to the overview page. On the right will be a send button. Clicking this button will send the message through to us, and once clicked the user will be taken back to the overview page and a short message will show saying if the message was sent successfully or not.
-
-### Footer:
-
-The footer will have a link for users to ‘contact us’, social media links, and a sign-up button if a user has yet to sign-up, and a sign-out button if the user is already signed in.
-Future Features
-
+## Future Features
 ### Share Button:
 
 Add in a share button for a day’s work out. This share button will send a link to someone else, which when clicked on will only show the day the user has shared and the user who got shared the link will not be able to edit or delete anything. They will only be shown the workouts, reps, sets and weights and the date of the workout.
