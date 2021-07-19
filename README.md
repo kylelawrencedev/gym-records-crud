@@ -1,4 +1,5 @@
-# **Gym Records**
+# **Gym Records** #
+![Overview Screenshot](static/images/overview.jpg)
 # Strategy:
 ### Project Purpose
 I was at the gym the other day and I saw someone pull out a booklet that had columns on. They were writing down the weights they had done for each different exercise. This made me think it would be perfect if I could do this but not have to worry about losing the booklet or forgetting it at home. I always have my phone on me.
