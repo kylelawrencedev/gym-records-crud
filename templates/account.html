@@ -56,6 +56,7 @@
                                     </button>
                                 </div>
                             </div>
+                            <input type="hidden" value="{{ request.args.get('next', '') }}"/>
                         </form>
                     </div>
                     <!--Create Account-->
@@ -108,6 +109,7 @@
                                     </button>
                                 </div>
                             </div>
+                            <input type="hidden" value="{{ request.args.get('next', '') }}"/>
                         </form>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import os
+from functools import wraps
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -18,6 +19,18 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+def login_required(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'user' in session:
+            return f(*args, **kwargs)
+        else:
+            flash("You Need to Login First")
+            return redirect(url_for('login', next=request.url))
+
+    return wrap
+
+
 @app.route("/")
 @app.route("/home")
 def home():
@@ -33,6 +46,7 @@ def home():
 
 
 @app.route("/get_overview")
+@login_required
 def get_overview():
     '''
     Displays all the workouts from the workouts Collection
@@ -48,6 +62,7 @@ def get_overview():
 
 
 @app.route("/search", methods=["GET", "POST"])
+@login_required
 def search():
     '''
     Allows the user to search the workouts collection
@@ -153,6 +168,7 @@ def login():
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
+@login_required
 def profile(username):
     '''
     Retrieves the username and records from the database.
@@ -181,6 +197,7 @@ def profile(username):
 
 
 @app.route("/add_record/", methods=["GET", "POST"])
+@login_required
 def add_record():
     '''
     Lets user fill out form for records. All data entered
@@ -210,6 +227,7 @@ def add_record():
 
 
 @app.route("/edit_record/<record_id>", methods=["GET", "POST"])
+@login_required
 def edit_record(record_id):
     '''
     Lets the user retrieve a record already stored in the
@@ -240,6 +258,7 @@ def edit_record(record_id):
 
 
 @app.route("/delete_record/<record_id>")
+@login_required
 def delete_record(record_id):
     '''
     Allows the user to delete a record if they do not
@@ -280,6 +299,7 @@ def logout():
 
 
 @app.route("/add_workout", methods=["GET", "POST"])
+@login_required
 def add_workout():
     '''
     Allows the user to add a workout to the workouts Collection
@@ -313,6 +333,7 @@ def add_workout():
 
 
 @app.route("/edit_workout/<exercise_id>", methods=["GET", "POST"])
+@login_required
 def edit_workout(exercise_id):
     '''
     Retrieves the users stored workout from the workouts collection.
@@ -348,6 +369,7 @@ def edit_workout(exercise_id):
 
 
 @app.route("/delete_workout/<exercise_id>")
+@login_required
 def delete_workout(exercise_id):
     '''
     Allows the user to delete the relevant exercise
