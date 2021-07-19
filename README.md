@@ -20,11 +20,11 @@ Show a log in and sign-up button for the users at the top of the page. For the b
 
 ### Overview Page:
 
-Search Option: On the left side of the page will be a search box for the user to input the name of a session heading or a week they want to search. Next to this search box will be a date selector. The user will choose a “from” and a “to” date. This date range will then show all the workouts the user added during this range.
+* Search Option: On the left side of the page will be a search box for the user to input the name of a session heading or a week they want to search. Next to this search box will be a date selector. The user will choose a “from” and a “to” date. This date range will then show all the workouts the user added during this range.
 
-Show the current weeks gym sessions at the top of the page, with the Session heading being collapsible. The user can click on the session heading and this will show all the gym sessions for that week. Next to the session heading will be the date that the user went to gym, this date is chosen when they are filling out the new session form. 
+* Collapsible: Show the most recent gym sessions at the top of the page, with the Session heading being collapsible. The user can click on the session heading and this will show all the gym exercises for that day. Next to the session heading will be the date that the user went to gym, this date is chosen when they are filling out the new session form. 
 
-At the bottom of the gym session will be two buttons, one to delete the gym session and one to edit the session in case the user input something wrong into the session. Underneath the previous week’s gym sessions is a button that says, “View All”. Pressing this button will show the user all their previous gym sessions plus the current sessions.
+* Edit/Delete: On the right hand side of the gym session heading will be two buttons, one to delete the gym session and one to edit the session in case the user input something wrong into the session. 
 
 ### New Session Page:
 
