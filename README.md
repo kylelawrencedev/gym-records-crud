@@ -4,7 +4,6 @@
 
 ## Contents ##
 * [Strategy](#strategy)
-    * [User Stories](#user-stores)
 * [User Stories](#user-stories)
 * [Scope & Skeleton](#scope)
 * [Future Features](#future-features)
@@ -204,6 +203,16 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 
 ![Delete Workout](static/images/testing_images/workout/delete_workout.jpg)
 ![Successfully delete workout](static/images/testing_images/workout/success_delete_workout.jpg)
+
+## Search Workouts
+
+* Searching workouts makes it easier to find what the user is looking for
+
+    * Search a key word from one of the work outs, "Biceps" any workouts with biceps in them will show
+    * Search something that is not in the workouts an a piece of text will show saying, "No Results"
+
+![Successful Search](static/images/testing_images/workout/workouts_search_success.jpg)
+![Unsuccessful Search](static/images/testing_images/workout/workouts_search_fail.jpg)
 
 <a name="defensive-design"></a>
 
