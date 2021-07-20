@@ -84,7 +84,9 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 # Feature Testing
 ## User Account
  # Accout Login/Create Account:
- *FEa As a user I land on the home page. I click on the Account link in the navbar. I am then taken to the Account Login/Creat Account page. 
+
+![Successfully logged into site](static/images/testing_images/account/successful_account.jpg)
+ * As a user I land on the home page. I click on the Account link in the navbar. I am then taken to the Account Login/Creat Account page. 
 
     * I fill out the Username and Password and click Login. I get an error saying, "Incorrect Username/Password. This it to be expected because I have yet to create an account.
 
@@ -92,6 +94,9 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 
     * I then click logout, which is in the navbar. I get a prompt to confirm I want to logout. I click "Ok". I then re-enter my login details into the login form, whilst filling in the form, I click show password. The asterisks then turn to text and I can see the password I have entered. And I Succesfully log into my account
 
+![Incorrect username/password](static/images/testing_images/account/incorrect_username_password.jpg)
+![Show users password to user](static/images/testing_images/account/show_password.jpg)
+![User confirm logout](static/images/testing_images/account/logout_confirm.jpg)
 # Workouts
 ## Add Workout (Created): 
 * I clicked on the add Workout link in the navbar and the add workout button that shows on the overview page. Both take me to the same page. The page is a form that has input fields for me to fill out.
