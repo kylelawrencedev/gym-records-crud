@@ -171,18 +171,17 @@ def login():
 @login_required
 def profile(username):
     '''
-    Retrieves the username and records from the database.
-    Displays the users stored data from the users collection
-    and renders the profile.html page
+Retrieves the username and records from the database.
+Displays the users stored data from the users collection
+and renders the profile.html page
 
-    If user not in session, redirect to def login()
+If user not in session, redirect to def login()
 
-            Parameters:
-                username: Retrieves users information from the database
-            Returns:
-                Redirect : def login()
-                Renders Templates : def login()
-
+Parameters:
+username: Retrieves users information from the database
+Returns:
+Redirect : def login()
+Renders Templates : def login()
     '''
     records = list(mongo.db.records.find())
     # grab the session user's username from database
@@ -388,35 +387,6 @@ def delete_workout(exercise_id):
     mongo.db.workouts.remove({"_id": ObjectId(exercise_id)})
     flash("Workout Deleted")
     return redirect(url_for("get_overview"))
-
-
-# Error Handling
-@app.errorhandler(403)
-def forbidden(e):
-    '''
-    If user tries to access a forbidden link/page on the site
-
-            Parameters:
-                None
-            Returns:
-                Renders Template : 403.html
-    '''
-
-    return render_template('403.html'), 403
-
-
-@app.errorhandler(404)
-def page_not_found(e):
-    '''
-    If the user enters a url for the site that cannot be found,
-    they are shown this page
-
-            Parameters:
-                None
-            Returns:
-                Renders Template : 404.html
-    '''
-    return render_template('404.html'), 404
 
 
 # Error 500 handler route
