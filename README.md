@@ -13,6 +13,7 @@ I was at the gym the other day and I saw someone pull out a booklet that had col
 *	As a user I want to be able to see the latest week of workouts and the previous weeks workouts. With all other workouts being able to be found by searching by dates.
 *	As a user I want all my gym sessions and weeks to only be able to be seen by me, no other user can see my sessions. 
 
+---
 # Scope & Skeleton:
 ## Features
 ### Home Page:
@@ -40,6 +41,7 @@ Show a log in and sign-up button for the users at the top of the page. For the b
 
 * Logging In: At the bottom of the login and create account forms will be two buttons. One button will be to cancel, this will take the user to the home page, and the other button will say “Login” and “Create Account”.
 
+---
 ## Future Features
 ### Share Button:
 
@@ -49,11 +51,13 @@ Add in a share button for a day’s work out. This share button will send a link
 
 Set workouts for the future and when that date comes around, the user will be able to see what weights, reps and sets they wanted to do for the workout, and they can put in underneath these what they achieved during the session. This gives the user the opportunity to see if they understand how well they are doing at gym or whether they need to push themselves more. 
 
+---
 # Structure:
 ### Data Schema
 ![Data Schema](static/images/data_schema.jpg)
-# Surface:
 
+---
+# Surface:
 ### Fonts & Colours
 ### Font – Raleway
 Raleway is the 5th most used google font for fitness & gym websites. It is used by 3,583/55,085, meaning it is used by 6.504% of gym websites. This makes this means the font is not as generic as the other websites, helping it stand out a little better. 
@@ -66,21 +70,25 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 1. 1E88E5 – Blue darken-1
 1. E57373 – Red lighten-2
 
+---
 ### Images
 
 * Desktop: Users that visit the site will see two images on the Home page. These are the only images to be found on the site. One image will be showing an image of a gym. The other will be a screenshot of one of the features of the site. This image can be updated if new features are added to the site. The image of the gym will take up the top left hand side of the home page. The screenshot of a site feature will be at the bottom right hand side of the site.
 
 * Mobile: Users will be shown the same images as desktop users, but the positioning of the images will be different. The image of the gym will be shown in the centre of the screen. With a relevant heading and action button underneath. Undear the heading and button will be the screenshot of a site feature. Underneath the screenshot will be a paragraph of text.
 
+---
 # Wireframes
 
-
+---
 # Testing
+## Home Page
 
 
 
+---
 # Deployment
 
-
+---
 # Credits
 https://www.codegrepper.com/code-examples/css/javascript+confirm+delete for confirm delete of Workout
