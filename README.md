@@ -180,6 +180,7 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
         Favicon not showing when user is on profile page, but shows on all other pages
 ---
 # Deployment
+## Github
  * When on GitHub navigate to [gym-records-crud](https://github.com/kylelawrencedev/gym-records-crud) repository. Once at the repository under the name will be 'Settings', which must be clicked.
     * When on the settings pages, start to scroll down.
     * While scrolling look out for the heading "Pages"
@@ -190,6 +191,12 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 
 "If you choose the /docs folder on any branch as your publishing source, then later remove the /docs folder from that branch in your repository, your site won't build, and you'll get a page build error message for a missing /docs folder." 
 [Configuring a publishing source](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+
+## Heroku
+### Signing Up To Heroku
+
+* Navigate to [Heroku](https://heroku.com)
+## Gitpod
 
 # Cloning my repository
 
