@@ -82,7 +82,7 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 
 ---
 # Feature Testing
-## User Account - Accout Login/Create Account:
+## User Account - Accout Login/Create Account/Logout:
 
 ![Successfully logged into site](static/images/testing_images/account/successful_account.jpg)
  * As a user I land on the home page. I click on the Account link in the navbar. I am then taken to the Account Login/Creat Account page. 
