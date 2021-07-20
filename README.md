@@ -114,6 +114,18 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 <a name="wireframes"></a>
 
 # Wireframes
+## Home Page
+![Home Page](static/images/wireframes/home_page.png)
+## Login & Create Account Page
+![Login & Create Account Page](static/images/wireframes/login_create.png)
+## New Record
+![New Record Form Page](static/images/wireframes/new_record.png)
+## New Workout
+![New Workout Form Page](static/images/wireframes/new_workout.png)
+## Overview of Workouts
+![Overview Page](static/images/wireframes/overview.png)
+## Users Profile
+![Profile Page](static/images/wireframes/profile.png)
 
 ---
 <a name="feature-testing"></a>
