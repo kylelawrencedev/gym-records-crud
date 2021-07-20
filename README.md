@@ -107,7 +107,7 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 ![Add New Record](static/images/record/add_record.jpg)
 ![Successfully Add Record](static/images/record/success_record_add.jpg)
 
-# Record Page (Read):
+## Record Page (Read):
 * All records that I add show on this page, they show all the information I added to the form and they give me options to edit and delete a record.
 
     * The date of the record was showing and once I clicked the dropdown button all the other information I had added to the form was showing
@@ -176,12 +176,28 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 ![User Logged Out](static/images/testing_images/account/user_logout.jpg)
 
 
-
-
-
-
+# Unfixable Bugs:
+        Favicon not showing when user is on profile page, but shows on all other pages
 ---
 # Deployment
+ * When on GitHub navigate to [gym-records-crud](https://github.com/kylelawrencedev/gym-records-crud) repository. Once at the repository under the name will be 'Settings', which must be clicked.
+    * When on the settings pages, start to scroll down.
+    * While scrolling look out for the heading "Pages"
+    * Under the heading click on the drop-down menu under source. 
+    * In the dropdown menu select either 'None' or 'Branch' as your publishing source.
+    * Once selected, you can select a folder for your publishing source. This can be either "/(root)" or "/docs".
+    * Then click save.
+
+"If you choose the /docs folder on any branch as your publishing source, then later remove the /docs folder from that branch in your repository, your site won't build, and you'll get a page build error message for a missing /docs folder." 
+[Configuring a publishing source](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+
+# Cloning my repository
+
+* Go to [gym-records-crud](https://github.com/kylelawrencedev/gym-records-crud) repository
+* Above where all the files are listed there will be a button that says "Code"
+* When clicked, a drop-down menu will appear. 
+* Click on "Open with GitHub Desktop"
+[Cloning a repository from GitHub to GitHub Desktop](https://docs.github.com/en/free-pro-team@latest/desktop/contributing-and-collaborating-using-github-desktop/cloning-a-repository-from-github-to-github-desktop)
 
 ---
 # Credits
