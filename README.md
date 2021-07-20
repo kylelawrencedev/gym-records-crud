@@ -68,8 +68,9 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 
 ### Images
 
-When the user lands on the home page they will see two images when on desktop and one image when on their phone. The images will be mock-ups of what they are able to do, so they will see examples of what the website allows them to do. On desktop the first image will be accompanied by a heading that is asking the user a question. It may say, “Do you want to better track your workouts?”. Below this questioning heading will be a slightly bigger heading telling the user to open an account. Below this heading will be a button that says, “Sign Up” this button will take the user to the sign-up page. Below the image and the headings will be another mock-up image, showing a different feature from the website, with a short paragraph explaining the websites benefits and uses.
-On mobile the one image will be a mock-up image followed by a short paragraph like the desktop version. Underneath the paragraph will be two buttons, one for the user to sign-in with and another for the user to sign-up with. 
+* Desktop: Users that visit the site will see two images on the Home page. These are the only images to be found on the site. One image will be showing an image of a gym. The other will be a screenshot of one of the features of the site. This image can be updated if new features are added to the site. The image of the gym will take up the top left hand side of the home page. The screenshot of a site feature will be at the bottom right hand side of the site.
+
+* Mobile: Users will be shown the same images as desktop users, but the positioning of the images will be different. The image of the gym will be shown in the centre of the screen. With a relevant heading and action button underneath. Undear the heading and button will be the screenshot of a site feature. Underneath the screenshot will be a paragraph of text.
 
 # Wireframes
 
