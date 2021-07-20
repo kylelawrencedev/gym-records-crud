@@ -65,7 +65,6 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 1. FFA726 – Orange lighten-1
 1. 1E88E5 – Blue darken-1
 1. E57373 – Red lighten-2
-1. E0F2F1 - Teal lighten-5
 
 ### Images
 
