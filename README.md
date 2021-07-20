@@ -81,10 +81,47 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 # Wireframes
 
 ---
-# Testing
-## Home Page
+# Feature Testing
+## User Account
+ # Accout Login/Create Account:
+ *FEa As a user I land on the home page. I click on the Account link in the navbar. I am then taken to the Account Login/Creat Account page. 
 
+    * I fill out the Username and Password and click Login. I get an error saying, "Incorrect Username/Password. This it to be expected because I have yet to create an account.
 
+    * I click on the Create Account tab, and am taken to the Create Account Form. I fill in the form giving a usernane and Password, and confirm I have put in the correct password. Before clicking create account, I clicked the switch for the show password function. The password I had entered turned from being asterisks to text, I could then see both passwords I had entered were correct. I then click Create Account and I am logged into the site. I land on the Profile page.
+
+    * I then click logout, which is in the navbar. I get a prompt to confirm I want to logout. I click "Ok". I then re-enter my login details into the login form, whilst filling in the form, I click show password. The asterisks then turn to text and I can see the password I have entered. And I Succesfully log into my account
+
+# Workouts
+## Add Workout (Created): 
+* I clicked on the add Workout link in the navbar and the add workout button that shows on the overview page. Both take me to the same page. The page is a form that has input fields for me to fill out.
+
+    * I give the workout session a name, an appropriate date, and I add 3 different workouts that I know. 
+    
+    * I click the delete exercise button and the last exercise that I added is deleted.
+
+    * I then click add workout. I am taken to the overview page, and I can see the workout I had just added. I click the dropdown button and I can see all the exercises I had done with all the relevant information that I had added showing.
+
+![Workout Successfully Added](static/images/testing_images/workout/success_add_workout.jpg) 
+
+## Overview Page (Read): 
+* All the workouts that I add are shown on this page.
+
+![Added Workout Overview](static/images/testing_images/workout/workout_dropdown.jpg)
+
+## Edit Workout (Update): 
+* I decided I wanted to edit the workout I had just created. I clicked on the edit button and was taken to a page that is identical to the add workout page, but this page had all my information already showing on the form.
+
+    * I wanted to add in a few more exercises and change the heading to a more general heading. I change those fields on the form and clicked edit workout. I was taken back to the overview page and I could see the Workout heading had been change. I clicked on the dropdown and I could see my new exercises had been added.
+
+![Workout Edited Successfully](static/images/testing_images/workout/success_edit_workout.jpg)
+## Delete Workout (Delete): 
+* After a few days I decided I did not want to keep a record for the workout so I went to click delete workout.
+
+    * I found the relevant workout I wanted to delete and clicked the delete button that is next to the edit button. When I clicked it, I got a pop-up alert asking if I was sure I wanted to delete the workout. I clicked "OK" to delete the workout. Once clicked the page reloaded and my workout was no longer showing on the overview page.
+
+![Delete Workout](static/images/testing_images/workout/delete_workout.jpg)
+![Successfully delete workout](static/images/testing_images/workout/success_delete_workout.jpg)
 
 ---
 # Deployment
