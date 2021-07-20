@@ -302,6 +302,7 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 
 # Unfixable Bugs:
 * Favicon not showing when user is on profile page, but shows on all other pages
+* Deleting exercise rows. If a user adds 5 exercises and they want to delete the first exercise. When they click delete for that exercise, the last exercise gets deleted not the exercise they wanted. I was unable to figure out how to fix this piece of code.
 ---
 <a name="deployment"></a>
 
