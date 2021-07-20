@@ -5,7 +5,7 @@ $(document).ready(function () {
     $('.collapsible').collapsible();
     $('.tabs').tabs();
     $('select').formSelect();
-    $('.dropdown-trigger').dropdown()
+    $('.dropdown-trigger').dropdown();
     $('.datepicker').datepicker({
         format: "dd mmmm, yyyy",
         yearRange: 1,
@@ -117,7 +117,7 @@ function deleteRow() {
         let row = TABLE.deleteRow(rowCount-1);
         rowCount--;
     } else{
-        alert("Cannot Delete Exercise")
+        alert("Cannot Delete Exercise");
     }
 }
 function addRow() {
@@ -140,7 +140,7 @@ document.getElementById("exercise_sets1").disabled = true;
 document.getElementById("exercise_weight1").disabled = true;
 
 function addExercise() {
-    let table = document.getElementById("table")
+    let table = document.getElementById("table");
     if (table.style.display === "none") {
         table.style.display = "block";
         document.getElementById("exercise_name1").disabled = false;
