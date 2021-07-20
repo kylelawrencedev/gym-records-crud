@@ -1,8 +1,34 @@
 # **Gym Records** #
 ![Overview Screenshot](static/images/overview.jpg)
+---
+
+## Contents ##
+* [Strategy](#strategy)
+    * [User Stories](#user-stores)
+* [User Stories](#user-stories)
+* [Scope & Skeleton](#scope)
+* [Future Features](#future-features)
+* [Structure](#structure)
+* [Surface](#surface)
+* [Wireframing](#wireframing)
+* [Feature Testing](#feature-testing)
+* [Records (CRUD)](#records)
+* [Workouts (CRUD)](#workouts)
+* [Defensive Design](#defensive)
+* [Technology Used](#technology)
+* [Unfixabled Bugs](#unfixable-bugs)
+* [Deployment](#deployment)
+* [Cloning](#clone)
+* [Credits](#credits)
+
 # Strategy:
+<a name="strategy"></a>
+
 ### Project Purpose
 I was at the gym the other day and I saw someone pull out a booklet that had columns on. They were writing down the weights they had done for each different exercise. This made me think it would be perfect if I could do this but not have to worry about losing the booklet or forgetting it at home. I always have my phone on me.
+
+<a name="user-stores"></a>
+
 ### User Stories
 * 	As a user I want to be able to log into my own account, that is password protected.
 * 	As a new user I want to be able to create a new account with a username and a password.
@@ -14,6 +40,8 @@ I was at the gym the other day and I saw someone pull out a booklet that had col
 *	As a user I want all my gym sessions and weeks to only be able to be seen by me, no other user can see my sessions. 
 
 ---
+<a name="scope"></a>
+
 # Scope & Skeleton:
 ## Features
 ### Home Page:
@@ -42,7 +70,9 @@ Show a log in and sign-up button for the users at the top of the page. For the b
 * Logging In: At the bottom of the login and create account forms will be two buttons. One button will be to cancel, this will take the user to the home page, and the other button will say “Login” and “Create Account”.
 
 ---
-## Future Features
+<a name="future-features"></a>
+
+# Future Features
 ### Share Button:
 
 Add in a share button for a day’s work out. This share button will send a link to someone else, which when clicked on will only show the day the user has shared and the user who got shared the link will not be able to edit or delete anything. They will only be shown the workouts, reps, sets and weights and the date of the workout.
@@ -52,11 +82,15 @@ Add in a share button for a day’s work out. This share button will send a link
 Set workouts for the future and when that date comes around, the user will be able to see what weights, reps and sets they wanted to do for the workout, and they can put in underneath these what they achieved during the session. This gives the user the opportunity to see if they understand how well they are doing at gym or whether they need to push themselves more. 
 
 ---
+<a name="structure"></a>
+
 # Structure:
 ### Data Schema
 ![Data Schema](static/images/data_schema.jpg)
 
 ---
+<a name="surface"></a>
+
 # Surface:
 ### Fonts & Colours
 ### Font – Raleway
@@ -78,9 +112,13 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 * Mobile: Users will be shown the same images as desktop users, but the positioning of the images will be different. The image of the gym will be shown in the centre of the screen. With a relevant heading and action button underneath. Undear the heading and button will be the screenshot of a site feature. Underneath the screenshot will be a paragraph of text.
 
 ---
+<a name="wireframes"></a>
+
 # Wireframes
 
 ---
+<a name="feature-testing"></a>
+
 # Feature Testing
 ## User Account - Accout Login/Create Account/Logout:
 
@@ -97,6 +135,7 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 ![Show users password to user](static/images/testing_images/account/show_password.jpg)
 ![User confirm logout](static/images/testing_images/account/logout_confirm.jpg)
 
+<a name="records"></a>
 # Records (CRUD)
 ## Add Record (Create): 
 *  Once logged in, I saw a Add Record button. I clicked on it and it took me to a page that had a form with several different input fields for me to fill in.
@@ -104,8 +143,8 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
     * I filled in the form with my relevant details and clicked Add Record.
     * After I clicked Add Record I was taken back to the profile page and the record I had just create was showing on the page
 
-![Add New Record](static/images/record/add_record.jpg)
-![Successfully Add Record](static/images/record/success_record_add.jpg)
+![Add New Record](static/images/testing_images/record/add_record.jpg)
+![Successfully Add Record](static/images/testing_images/record/success_record_add.jpg)
 
 ## Record Page (Read):
 * All records that I add show on this page, they show all the information I added to the form and they give me options to edit and delete a record.
@@ -113,7 +152,7 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
     * The date of the record was showing and once I clicked the dropdown button all the other information I had added to the form was showing
     * Logging out of my account and logging back in, the records were still saved
 
-![Record Page](static/images/record/record_page.jpg)
+![Record Page](static/images/testing_images/record/record_page.jpg)
 
 ## Edit Record (Update):
 * When clicking the edit button at the end of each record, I was redirected to a new page similar to the Add Record page, but the form had all the previous information I had added already in each field.
@@ -122,7 +161,7 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
     * I changed the record, and clicked the Edit Record button
     * After clicking the button I was redirected back to the Profile page and i scrolled to find the record I had updated, I could see that the weight had now changed to the new value I had just updated it to.
 
-![Successfully Update Record](static/images/record/edit_record_success.jpg)
+![Successfully Update Record](static/images/testing_images/record/edit_record_success.jpg)
 
 ## Delete Record (Delete):
 * I wanted to now delete some records I had added, so I went to click the delete button.
@@ -130,8 +169,10 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
     * Clicking the delete button, prompts a popup message. The message asks I am sure I want to delete the record. I click "OK" to delete it. 
     * The page reloads and I scroll down to see the record is deleted
 
-![Delete Record Confirm Message](static/images/record/delete_record.jpg)
-![Record Successfully Deleted](static/images/record/success_delete_record.jpg)
+![Delete Record Confirm Message](static/images/testing_images/record/delete_record.jpg)
+![Record Successfully Deleted](static/images/testing_images/record/success_delete_record.jpg)
+
+<a name="workouts"></a>
 
 # Workouts
 ## Add Workout (Created): 
@@ -164,16 +205,38 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 ![Delete Workout](static/images/testing_images/workout/delete_workout.jpg)
 ![Successfully delete workout](static/images/testing_images/workout/success_delete_workout.jpg)
 
-# Logged In vs Logged Out:
+<a name="defensive-design"></a>
+
+# Defensive Design
+### Brute-Forcing
+
+* If a user is not logged into the site and they paste the url for a link that only logged in users can access, they will be redirected back to the login page.
+* Pages that cannot be accessed without being logged in are, overview, profile, add workout, edit workout, add record, edit record and search.
+* Pages that can be accessed by anybody are, the home page and login/create account page.
+
+### Required fields : Add/Edit Workout & Add/Edit Record
+
+* When filling out any of the above forms. All input fields need to be filled in.
+* Making the user filling in all fields makes sure that they do not send off blank information to the database.
+* If a field is empty they will get a pop-up saying what needs to be filled in and they will be unable to submit the form until all the fields are filled in
+
+![Warning! Input Field Edit Workout](static/images/testing_images/workout/edit-workout-fields.jpg)
+![Warning! Input Field Add Workout](static/images/testing_images/workout/add_workout_fields.jpg)
+![Warning! Input Field Add Record](static/images/testing_images/record/add_record_fields.jpg)
+![Warning! Input Field Edit Record](static/images/testing_images/record/edit_record_fields.jpg)
+
+## Logged In vs Logged Out:
         When a user is logged into the site they will have access to more features than if they were logged out. A user that is not logged in will not be able to add workouts/ records, update workouts/records, or even see any records.
-## Logged In
+### Logged In
         When a user is logged in their navbar will have 6 clickable links. As shown in the image below
 
 ![User Logged In](static/images/testing_images/account/user_login.jpg)
 
-## Logged Out
+### Logged Out
         Users that are not logged in will have very limited options. As shown in the image below
 ![User Logged Out](static/images/testing_images/account/user_logout.jpg)
+
+<a name="technology"></a>
 
 # Technologies Used
 
@@ -214,9 +277,13 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 * Git
 * Heroku
 
+<a name="unfixable-bugs"></a>
+
 # Unfixable Bugs:
         Favicon not showing when user is on profile page, but shows on all other pages
 ---
+<a name="deployment"></a>
+
 # Deployment
 ## Github
  * When on GitHub navigate to [gym-records-crud](https://github.com/kylelawrencedev/gym-records-crud) repository. Once at the repository under the name will be 'Settings', which must be clicked.
@@ -286,6 +353,7 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 * git push origin master
 * Go back to Heroku and click "Deploy Branch"
 
+<a name="clone"></a>
 # Cloning my repository
 
 * Go to [gym-records-crud](https://github.com/kylelawrencedev/gym-records-crud) repository
@@ -295,6 +363,8 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 [Cloning a repository from GitHub to GitHub Desktop](https://docs.github.com/en/free-pro-team@latest/desktop/contributing-and-collaborating-using-github-desktop/cloning-a-repository-from-github-to-github-desktop)
 
 ---
+<a name="credits"></a>
+
 # Credits
 [confirm delete of Workout](https://www.codegrepper.com/code-examples/css/javascript+confirm+delete)
 Mentor Rohit Sharma
