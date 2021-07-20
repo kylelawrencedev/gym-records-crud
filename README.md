@@ -175,6 +175,44 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
         Users that are not logged in will have very limited options. As shown in the image below
 ![User Logged Out](static/images/testing_images/account/user_logout.jpg)
 
+# Technologies Used
+
+* [CSS Prefixer](https://autoprefixer.github.io/)
+* [CSS Validator](https://jigsaw.w3.org/css-validator/)
+* [JSHINT](https://jshint.com/)
+* [PEP8](http://pep8online.com/)
+* [PYLINT](https://pypi.org/project/pylint/) 
+    * Got a final pylint score of 9.26/10
+
+![Pylint test](static/images/testing_images/pylint/pylint_1.jpg)
+![Pylint test](static/images/testing_images/pylint/pylint_2.jpg)
+![Pylint test](static/images/testing_images/pylint/pylint_3.jpg)
+![Pylint test](static/images/testing_images/pylint/pylint_4.jpg)
+![Pylint test](static/images/testing_images/pylint/pylint_5.jpg)
+![Pylint test](static/images/testing_images/pylint/pylint_6.jpg)
+
+### Frontend :
+
+* CSS
+* Font-Awesome
+* Google Fonts
+* HTML
+* Javascript
+
+### Backend :
+
+* Flask
+* Jinja
+* MongoDB
+* Python
+* Werkzeug
+
+### Deployment :
+
+* GitHub
+* Gitpod
+* Git
+* Heroku
 
 # Unfixable Bugs:
         Favicon not showing when user is on profile page, but shows on all other pages
@@ -196,7 +234,57 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 ### Signing Up To Heroku
 
 * Navigate to [Heroku](https://heroku.com)
-## Gitpod
+* Once there click sign-up and create a new account
+* Select Python as your Primary Development Language
+* You will receive a confirmation email with a link to validate your account. If you do not receive the link within 15 minutes check your spam folder, or contact Heroku directly.
+* Enter a password
+
+### Create a New Heroku App
+
+* Click "Create New App", name your app something unique (Do not use any spaces, uses hyphens "-")
+* Choose the closest region from the list
+* Click "Create App"
+
+### Heroku Toolbelt
+
+* In the terminal type, "npm instal; -g heroku"
+* Log into heroku using the command "heroku login" in your terminal
+* Log in using your previously used details.
+* Enter the command, "heroku apps". This will show which apps you have
+* In the terminal enter, "--app (apps name)"
+
+### Pushing to Heroku
+
+* Add all your files to the staging area by using, "git add -A" or "git add ."
+* Your commit messsage will be, "Deployment to Heroku"
+* Go back to the heroku site, and head to "settings" for the app. Copy the Heroku Git URL
+* In the terminal type, "git remote add", and for the name, "heroku". Then paste the URL.
+
+### requirements.txt
+
+* Create requirements.txt type, "pip3 freeze --local > requirements.txt"
+* Add file to staging area, "git add ."
+* Commit message type, "Add requirements.txt"
+* Push file to heroku, "git push -u heroku master"
+
+### Procfile
+
+* In terminal type, "echo web: python run.py > Procfile" (Has to be a capital P for Procfile)
+* git add Procfile
+* git commit -m "Add Procfile"
+* and git push
+* In settings find "Reveal Config Vars"
+* Add the key"IP" and value of "0.0.0.0"
+* Add the key "PORT" and the value of "5000"
+* Add the "SECRET_KEY", and the value of the key in your env.py file"
+* Click the deply tab, And connect to GitHub
+* Get your repository name, paste it into Heroku and click Search
+* Your repository should show up, click connect.
+* Go back to your terminal, type "git remote rm heroku"
+* git add .
+* git commit -m "Push to Github"
+* git push origin master
+* Go back to Heroku and click "Deploy Branch"
 
 # Cloning my repository
 
@@ -208,4 +296,7 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 
 ---
 # Credits
-https://www.codegrepper.com/code-examples/css/javascript+confirm+delete for confirm delete of Workout
+[confirm delete of Workout](https://www.codegrepper.com/code-examples/css/javascript+confirm+delete)
+Mentor Rohit Sharma
+Tutor Support
+Slack
