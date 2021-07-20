@@ -20,6 +20,12 @@ mongo = PyMongo(app)
 
 
 def login_required(f):
+    '''
+Checks if user is in session
+If user not in session, redirected to login
+
+@login_required used all all relevant functions
+    '''
     @wraps(f)
     def wrap(*args, **kwargs):
         if 'user' in session:
@@ -35,12 +41,11 @@ def login_required(f):
 @app.route("/home")
 def home():
     '''
-    The landing page for the whole site. All users can see
-    this page, whether they are signed in or not
-            Parameters:
-                None
-            Returns:
-                Renders Template : index.html
+The landing page for the whole site. All users can see
+this page, whether they are signed in or not
+
+Args:
+Renders Template : index.html
     '''
     return render_template("index.html")
 
@@ -49,13 +54,12 @@ def home():
 @login_required
 def get_overview():
     '''
-    Displays all the workouts from the workouts Collection
-    Overview.html page will show all relevant results from
-    the workouts collection
-            Parameters:
-                None
-            Returns:
-                Renders Template : overview.html
+Displays all the workouts from the workouts Collection
+Overview.html page will show all relevant results from
+the workouts collection
+
+Args:
+Renders Template : overview.html
     '''
     workouts = list(mongo.db.workouts.find().sort("exercise_date", -1))
     return render_template("overview.html", workouts=workouts)
@@ -65,13 +69,11 @@ def get_overview():
 @login_required
 def search():
     '''
-    Allows the user to search the workouts collection
+Allows the user to search the workouts collection
 
-            Parameters:
-                None
-            Returns:
-                Retrieves the relevant workouts from the collection
-                Renders Template : overview.html
+Args:
+Retrieves the relevant workouts from the collection
+Renders Template : overview.html
     '''
     query = request.form.get("query")
     workouts = list(mongo.db.workouts.find({"$text": {"$search": query}}))
@@ -81,12 +83,10 @@ def search():
 @app.route("/account", methods=["GET", "POST"])
 def account():
     '''
-    Login/Create account page. Visable to all users
+Login/Create account page. Visable to all users
 
-            Parameters:
-                None
-            Returns:
-                Renders Template : account.html
+Args:
+Renders Template : account.html
     '''
     return render_template("account.html")
 
@@ -94,16 +94,14 @@ def account():
 @app.route("/create_account", methods=["GET", "POST"])
 def create_account():
     '''
-    Allows a user to create an account with a username and a password
-    If username is taken/ already exists then the user will get a flash
-    message tellimg them the username is taken
-    create_account will generate an account to be added to
-    the users collection
+Allows a user to create an account with a username and a password
+If username is taken/ already exists then the user will get a flash
+message tellimg them the username is taken
+create_account will generate an account to be added to
+the users collection
 
-            Parameters:
-                None
-            Returns:
-                Renders Template : account.html
+Args:
+Renders Template : account.html
     '''
     if request.method == "POST":
         # check if username already exists in database
@@ -131,14 +129,12 @@ def create_account():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     '''
-    Checks the information the user has entered onto the login page is correct.
-    If the user information matches the username and password from
-    the users Collection, the user will be logged into the site
+Checks the information the user has entered onto the login page is correct.
+If the user information matches the username and password from
+the users Collection, the user will be logged into the site
 
-            Parameters:
-                None
-            Returns:
-                Renders Templates : account.html
+Args:
+Renders Templates : account.html
     '''
     if request.method == "POST":
         # check if username already exists in database
@@ -179,7 +175,8 @@ If user not in session, redirect to def login()
 
 Parameters:
 username: Retrieves users information from the database
-Returns:
+
+Args:
 Redirect : def login()
 Renders Templates : def login()
     '''
@@ -199,16 +196,14 @@ Renders Templates : def login()
 @login_required
 def add_record():
     '''
-    Lets user fill out form for records. All data entered
-    onto form is saved to records Collection in database
+Lets user fill out form for records. All data entered
+onto form is saved to records Collection in database
 
-    If user not in session, redirected to def login()
+If user not in session, redirected to def login()
 
-            Parameters:
-                None
-            Returns:
-                Redirect : def login()
-                Renders Template : add_record.html
+Args:
+Redirect : def login()
+Renders Template : add_record.html
     '''
     if request.method == "POST":
         record = {
@@ -229,16 +224,17 @@ def add_record():
 @login_required
 def edit_record(record_id):
     '''
-    Lets the user retrieve a record already stored in the
-    database and edit that specific record. Displays the
-    stored record from the database in the form, in the relevant fields
+Lets the user retrieve a record already stored in the
+database and edit that specific record. Displays the
+stored record from the database in the form, in the relevant fields
 
-            Parameters:
-                record_id: This is the unique identifier that is
-                associated with each stored record
-            Returns:
-                Redirect : def login()
-                Renders Template : edit_record.html
+Parameters:
+record_id: This is the unique identifier that is
+associated with each stored record
+
+Args:
+Redirect : def login()
+Renders Template : edit_record.html
     '''
     if request.method == "POST":
         update = {
@@ -260,21 +256,22 @@ def edit_record(record_id):
 @login_required
 def delete_record(record_id):
     '''
-    Allows the user to delete a record if they do not
-    wish to keep that specific record
+Allows the user to delete a record if they do not
+wish to keep that specific record
 
-    Fetches the relevant record and deletes it from
-    the database collection. User gets redirected to
-    profile.html with deleted record not showing
+Fetches the relevant record and deletes it from
+the database collection. User gets redirected to
+profile.html with deleted record not showing
 
-    If user not in session, redirected back to def login()
+If user not in session, redirected back to def login()
 
-            Parameters:
-                record-id: Retrieves the record_id from the records
-                collection in the database
-            Returns:
-                Redirect : def login()
-                Redirect : def profile(username)
+Parameters:
+record-id: Retrieves the record_id from the records
+collection in the database
+
+Args:
+Redirect : def login()
+Redirect : def profile(username)
     '''
     mongo.db.records.remove({"_id": ObjectId(record_id)})
     flash("Record Deleted")
@@ -284,12 +281,10 @@ def delete_record(record_id):
 @app.route("/logout")
 def logout():
     '''
-    Allows user to logout of their session
+Allows user to logout of their session
 
-            Parameters:
-                None
-            Returns:
-                Redirect : Redirects user back to def login()
+Args:
+ Redirect : Redirects user back to def login()
     '''
     # remove user from session cookies
     flash("You have been logged out")
@@ -301,18 +296,16 @@ def logout():
 @login_required
 def add_workout():
     '''
-    Allows the user to add a workout to the workouts Collection
-    Shows a form for the user to fill out relevant fields to
-    be saved to the database and retreived later
+Allows the user to add a workout to the workouts Collection
+Shows a form for the user to fill out relevant fields to
+be saved to the database and retreived later
 
-    If user not in session they will be redirected to the
-    rendered template of 403.html
+If user not in session they will be redirected to the
+rendered template of 403.html
 
-            Parameters:
-                None
-            Returns:
-                Renders Template : 403.html
-                Renders Template : def get_overview()
+Args:
+Renders Template : 403.html
+Renders Template : def get_overview()
     '''
     if request.method == "POST":
         workout = [{
@@ -335,20 +328,21 @@ def add_workout():
 @login_required
 def edit_workout(exercise_id):
     '''
-    Retrieves the users stored workout from the workouts collection.
-    Shows the same form for when the user added the workout, with
-    the form already filled out with all the stored information
-    from the database Collection. The information can then be editted
+Retrieves the users stored workout from the workouts collection.
+Shows the same form for when the user added the workout, with
+the form already filled out with all the stored information
+from the database Collection. The information can then be editted
 
-    If user not in session redirected to def login()
+If user not in session redirected to def login()
 
-            Parameters:
-                exercise_id: Retrieves the stored exercise, with all the
-                relevant fields from the collection showing in the form in
-                the correct spots in the form.
-            Returns:
-                Redirect: def login()
-                Renders Template : edit_workout.html
+Parameters:
+exercise_id: Retrieves the stored exercise, with all the
+ relevant fields from the collection showing in the form in
+the correct spots in the form.
+
+Args:
+Redirect: def login()
+Renders Template : edit_workout.html
     '''
     if request.method == "POST":
         submit = {
@@ -371,18 +365,19 @@ def edit_workout(exercise_id):
 @login_required
 def delete_workout(exercise_id):
     '''
-    Allows the user to delete the relevant exercise
+Allows the user to delete the relevant exercise
 
-    If user not in session, user will be redirect to
-    def login()
+If user not in session, user will be redirect to
+def login()
 
-            Parameters:
-                exercise_id: Fetches the relevant exericse using
-                the exercise id. Deletes the relevant stored
-                workout from the database collection.
-            Returns:
-                Redirect : def login()
-                Redirect : def get_overview()
+Parameters:
+exercise_id: Fetches the relevant exericse using
+the exercise id. Deletes the relevant stored
+workout from the database collection.
+
+Args:
+Redirect : def login()
+Redirect : def get_overview()
     '''
     mongo.db.workouts.remove({"_id": ObjectId(exercise_id)})
     flash("Workout Deleted")
@@ -393,12 +388,9 @@ def delete_workout(exercise_id):
 @app.errorhandler(500)
 def server_error(e):
     '''
-    If there is a server issue, the user will be shown this page
-
-            Parameters:
-                None
-            Returns:
-                Renders Template : 500.html
+If there is a server issue, the user will be shown this page
+Args:
+Renders Template : 500.html
     '''
     return render_template('500.html'), 500
 
