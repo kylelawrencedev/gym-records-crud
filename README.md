@@ -82,8 +82,7 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 
 ---
 # Feature Testing
-## User Account
- # Accout Login/Create Account:
+## User Account - Accout Login/Create Account:
 
 ![Successfully logged into site](static/images/testing_images/account/successful_account.jpg)
  * As a user I land on the home page. I click on the Account link in the navbar. I am then taken to the Account Login/Creat Account page. 
@@ -97,6 +96,43 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 ![Incorrect username/password](static/images/testing_images/account/incorrect_username_password.jpg)
 ![Show users password to user](static/images/testing_images/account/show_password.jpg)
 ![User confirm logout](static/images/testing_images/account/logout_confirm.jpg)
+
+# Records (CRUD)
+## Add Record (Create): 
+*  Once logged in, I saw a Add Record button. I clicked on it and it took me to a page that had a form with several different input fields for me to fill in.
+
+    * I filled in the form with my relevant details and clicked Add Record.
+    * After I clicked Add Record I was taken back to the profile page and the record I had just create was showing on the page
+
+![Add New Record](static/images/record/add_record.jpg)
+![Successfully Add Record](static/images/record/success_record_add.jpg)
+
+# Record Page (Read):
+* All records that I add show on this page, they show all the information I added to the form and they give me options to edit and delete a record.
+
+    * The date of the record was showing and once I clicked the dropdown button all the other information I had added to the form was showing
+    * Logging out of my account and logging back in, the records were still saved
+
+![Record Page](static/images/record/record_page.jpg)
+
+## Edit Record (Update):
+* When clicking the edit button at the end of each record, I was redirected to a new page similar to the Add Record page, but the form had all the previous information I had added already in each field.
+
+    * I decided I want to change the weight I had put down for one record
+    * I changed the record, and clicked the Edit Record button
+    * After clicking the button I was redirected back to the Profile page and i scrolled to find the record I had updated, I could see that the weight had now changed to the new value I had just updated it to.
+
+![Successfully Update Record](static/images/record/edit_record_success.jpg)
+
+## Delete Record (Delete):
+* I wanted to now delete some records I had added, so I went to click the delete button.
+
+    * Clicking the delete button, prompts a popup message. The message asks I am sure I want to delete the record. I click "OK" to delete it. 
+    * The page reloads and I scroll down to see the record is deleted
+
+![Delete Record Confirm Message](static/images/record/delete_record.jpg)
+![Record Successfully Deleted](static/images/record/success_delete_record.jpg)
+
 # Workouts
 ## Add Workout (Created): 
 * I clicked on the add Workout link in the navbar and the add workout button that shows on the overview page. Both take me to the same page. The page is a form that has input fields for me to fill out.
@@ -127,6 +163,12 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 
 ![Delete Workout](static/images/testing_images/workout/delete_workout.jpg)
 ![Successfully delete workout](static/images/testing_images/workout/success_delete_workout.jpg)
+
+
+
+
+
+
 
 ---
 # Deployment
