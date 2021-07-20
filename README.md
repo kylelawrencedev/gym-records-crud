@@ -164,6 +164,16 @@ Raleway is the 5th most used google font for fitness & gym websites. It is used 
 ![Delete Workout](static/images/testing_images/workout/delete_workout.jpg)
 ![Successfully delete workout](static/images/testing_images/workout/success_delete_workout.jpg)
 
+# Logged In vs Logged Out:
+        When a user is logged into the site they will have access to more features than if they were logged out. A user that is not logged in will not be able to add workouts/ records, update workouts/records, or even see any records.
+## Logged In
+        When a user is logged in their navbar will have 6 clickable links. As shown in the image below
+
+![User Logged In](static/images/testing_images/account/user_login.jpg)
+
+## Logged Out
+        Users that are not logged in will have very limited options. As shown in the image below
+![User Logged Out](static/images/testing_images/account/user_logout.jpg)
 
 
 
