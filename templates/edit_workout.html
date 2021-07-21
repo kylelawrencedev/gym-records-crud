@@ -40,19 +40,19 @@
                     </td>
                     <td>
                         {% for ex_reps in workout.exercise_reps %}
-                        <input id="exercise_reps" name="exercise_reps" type="number" class="validate" min="1"
+                        <input id="exercise_reps" name="exercise_reps" type="number" class="validate" min="1" max="500"
                             placeholder="Reps" value="{{ ex_reps }}" required>
                         {% endfor %}
                     </td>
                     <td>
                         {% for ex_sets in workout.exercise_sets %}
-                        <input id="exercise_sets" name="exercise_sets" type="number" class="validate" min="1"
+                        <input id="exercise_sets" name="exercise_sets" type="number" class="validate" min="1" max="500"
                             placeholder="Sets" value="{{ ex_sets }}" required>
                         {% endfor %}
                     </td>
                     <td>
                         {% for ex_weight in workout.exercise_weight %}
-                        <input id="exercise_weight" name="exercise_weight" type="number" class="validate" min="1"
+                        <input id="exercise_weight" name="exercise_weight" type="number" class="validate" min="1" max="500"
                             placeholder="Weight" value="{{ ex_weight }}" required>
                         {% endfor %}
                     </td>
