@@ -132,12 +132,14 @@ function addRow() {
 		cell.innerHTML=copycel;
     }
 }
-
-document.getElementById("table").style.display = "none";
-document.getElementById("exercise_name1").disabled = true;
-document.getElementById("exercise_reps1").disabled = true;
-document.getElementById("exercise_sets1").disabled = true;
-document.getElementById("exercise_weight1").disabled = true;
+let table = document.getElementById("table")
+if (table !== null) {
+    table.style.display = "none";
+    document.getElementById("exercise_name1").disabled = true;
+    document.getElementById("exercise_reps1").disabled = true;
+    document.getElementById("exercise_sets1").disabled = true;
+    document.getElementById("exercise_weight1").disabled = true;
+}
 
 function addExercise() {
     let table = document.getElementById("table");
